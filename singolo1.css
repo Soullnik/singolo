@@ -58,6 +58,10 @@ li:first-child {
     font-size: 12px;
 }
 
+.navigation ul li a:hover {
+    color: #f06c64;
+}
+
 .logo {
     font-size: 25px;
     color: #ffffff;
