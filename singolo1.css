@@ -1,6 +1,7 @@
-body {
+@font-face {
     font-family: "Lato";
-}
+    src: url("/accets/Lato-Regular.ttf.ttf") format("TrueType");
+   }
 
 .wrapper {
     width: 1020px;
