@@ -373,6 +373,8 @@ li:first-child {
 /*icon*/
 
 .pen {
+    height: 32px;
+    margin: 12px auto;
+    width: 32px;
     background-image: url(./accets/pen.svg);
-    background-position: center;
 }
