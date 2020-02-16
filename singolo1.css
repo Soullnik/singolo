@@ -1,7 +1,9 @@
-@font-face {
-    font-family: "Lato";
-    src: url("/accets/Lato-Regular.ttf.ttf") format("TrueType");
-   }
+@import "assets/fonts/fonts.css";
+
+* {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
 
 .wrapper {
     width: 1020px;
@@ -26,55 +28,64 @@
 
 
 .navigation {
-    display: block;
+    display: flex;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: bold;
+    padding-top: 8px;
     width: 410px;
-    margin: 0 0px 0 385px;
 }
 
-.navigation ul {
+.header-nav-item {
     display: flex;
     justify-content: space-between;
-    margin: 40px 40px 0 0;
+    margin: 34px 28px 0 0;
     text-transform: uppercase;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.37px;
+    list-style-type: none
 }
 
-li {
-    list-style: disc;
-    color: #494e62;
-}
-
-li:first-child {
-    color:#2d303a;
-}
-
-
-
-
-.navigation ul li a {
-    display: flex;
+.header-nav-item a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 12px;
-}
-
-.navigation ul li a:hover {
+    text-transform: uppercase;
+    display: block;
+    height: 100%;
+  }
+  
+  .header-nav-item:not(:last-child)::after {
+    content: ".";
+    display: block;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    right: -18px;
+    top: -2px;
+    color: #494e62;
+  }
+  
+  .header-nav-item a:hover {
     color: #f06c64;
-}
+  }
+
+
+
 
 .logo {
     font-size: 25px;
     color: #ffffff;
-    font-weight: 700;
-    margin: 32px 0 0 39px;
+    margin: 31px 0 0 39px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -1px;
 }
 
-.logoUp {
-    font-size: 25px;
+.logo-star {
     color: #f06c64;
-    font-weight: 700;
-    margin: 32px 65px 0px 0px;
+    font-size: 82%;
+    font-family: serif;
+    position: relative;
+    bottom: 5px;
 }
 
 .menu {
@@ -165,7 +176,7 @@ li:first-child {
     background-position: center;
 }
 
-.menu-primary {
+.services-primary {
     display: flex;
     flex-wrap: wrap;
     width: 1020px;
@@ -175,40 +186,40 @@ li:first-child {
 }
 
 
-.menu-primary .asid-info {
+.services-primary .services-info {
     width: 1020px;
     height: 200px;
 }
 
-.asid-info h1 {
-    font-size: 30px;
-    line-height: 18px;
+.services-info h1 {
+    font-size: 28px;
+    line-height: 20px;
     color: #666d89;
-    font-weight: 900;
-    text-align: left;
+    font-weight: 700;
     margin: 69px 0px 0px 40px;
+    letter-spacing: 0.1px;
 }
 
-.asid-info p {
-    font-size: 18px;
+.services-info p {
+    font-size: 17px;
     line-height: 31px;
     color: #767e9e;
     margin: 26px 0px 0px 40px;
-    letter-spacing: -0.06px;
+    letter-spacing: -0.33px;
 }
 
-.asid-menu {
+.services-list {
     display: flex;
     height: 295px;
     width: 1200px;
     margin: 0px 25px 0px 25px;
 }
 
-.asid-column {
+.services-column {
     flex-grow: 1;
 }
 
-.asid-menu > h1 {
+.services-list > h1 {
     font-size: 18px;
     line-height: 18px;
     color: #666d89;
@@ -216,7 +227,7 @@ li:first-child {
     text-align: left;
 }
 
-.asid-menu > p {
+.services-list > p {
     width: 219px;
     height: 128px;
     font-size: 12px;
@@ -226,7 +237,7 @@ li:first-child {
     text-align: left;
 }
 
-.asid-circle {
+.services-circle {
     display: flex;
     width: 54px;
     height: 54px;
@@ -235,27 +246,30 @@ li:first-child {
     margin: 19px 0px 0px 16px;
 }
 
-.asid-text {
+.services-text {
     margin: 18px 0px 0px 20px;
 }
 
-.asid-text > h1 {
-    font-size: 18px;
+.services-text > h1 {
+    font-size: 17px;
     line-height: 18px;
     color: #666d89;
-    font-weight: 900;
+    font-weight: 600;
+    letter-spacing: -0.1px;
+
 }
 
-.asid-text > p {
+.services-text > p {
     width: 218px;
     height: 79px;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 22px;
     color: #767e9e;
     margin: 10px 0px 0px 0px;
+    letter-spacing: 0.29px;
 }
 
-.asid-row {
+.services-row {
     display: flex;
 }
 
@@ -271,7 +285,7 @@ li:first-child {
 }
 .arrow-previous-top, 
 .arrow-previous-bottom {
-    background: rgba(0,0,0,0.2);
+    background: #ca4549;
     height: 6px;
     left: -30px;
     position: absolute;
@@ -325,7 +339,7 @@ li:first-child {
 }
 .arrow-next-top, 
 .arrow-next-bottom {
-    background: rgba(0,0,0,0.2);
+    background: #ca4549;
     height: 6px;
     left: -30px;
     position: absolute;
