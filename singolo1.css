@@ -378,3 +378,38 @@ li:first-child {
     width: 32px;
     background-image: url(./accets/pen.svg);
 }
+
+.phone {
+    height: 31px;
+    margin: 12px auto;
+    width: 21px;
+    background-image: url(./accets/phone.svg);
+}
+
+.bulb {
+    height: 32px;
+    margin: 12px auto;
+    width: 32px;
+    background-image: url(./accets/bulb.svg);
+}
+
+.bubble {
+    height: 28px;
+    margin: 12px auto;
+    width: 32px;
+    background-image: url(./accets/bubble.svg);
+}
+
+.heart {
+    height: 28px;
+    margin: 12px auto;
+    width: 32px;
+    background-image: url(./accets/heart.svg);
+}
+
+.star {
+    height: 28px;
+    margin: 12px auto;
+    width: 29px;
+    background-image: url(./accets/star.svg);
+}
