@@ -1,2 +1,2 @@
-# singolo
+# https://Soullnik.github.io/singolo/
  
