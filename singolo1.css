@@ -19,6 +19,7 @@
 
 .main {
     display: flex;
+    justify-content: space-between;
     height: 595px;
     background-color: #f06c64;
     border-bottom: 5px solid #ea676b;
@@ -102,7 +103,7 @@
     height: 458px;
     border-radius: 27px;
     background-color: #f2f2f2;
-    margin: 54px 0px 0px 112px;
+    margin: 54px 138px 0px 0px;
     box-shadow: 20px 21px 0px 5px rgba(0,0,0,0.1);
 }
 
@@ -158,7 +159,7 @@
     height: 458px;
     border-radius: 27px;
     background-color: #f2f2f2;
-    margin: 53px 0px 0px 219px;
+    margin: 53px 148px 0px 0px;
     box-shadow: 20px -21px 0px 5px rgba(0,0,0,0.1);
     transform: rotate(90deg);
 }
@@ -274,13 +275,11 @@
 /* ARROW */
 
 .arrow-previous {
-    cursor: pointer;
     height: 120px;
-    position: absolute;
-    margin: 239px 0px 0px 35px;
+    margin: 240px 0px 0px 35px;
     transform: rotate(180deg);
-
 }
+
 .arrow-previous-top, 
 .arrow-previous-bottom {
     background: #ca4549;
@@ -330,10 +329,9 @@
 }
 
 .arrow-next {
-    cursor: pointer;
     height: 120px;
-    position: absolute;
-    margin: 232px 0px 0px 988px;
+    margin: 230px 32px 0px 0px;
+    transform: rotate(0deg);
 }
 .arrow-next-top, 
 .arrow-next-bottom {
