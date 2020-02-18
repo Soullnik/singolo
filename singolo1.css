@@ -199,8 +199,9 @@ li:not(:last-child)::after {
     line-height: 1.75em;
     color: #767e9e;
     margin: 26px 0px 0px 40px;
-    letter-spacing: -0.33px;
-    word-spacing: 2px;
+    /* letter-spacing: -0.33px; */
+    word-spacing: -1px;
+    text-align: justify;
 }
 
 .services-list {
@@ -237,12 +238,13 @@ li:not(:last-child)::after {
 
 .services-text > p {
     width: 218px;
-    height: 79px;
+    height: 80px;
     font-size: 11px;
     line-height: 22px;
     color: #767e9e;
     margin: 10px 0px 0px 0px;
-    letter-spacing: 0.29px;
+    word-spacing: 2px;
+    text-align: justify;
 }
 
 .services-row {
