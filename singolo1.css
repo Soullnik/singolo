@@ -247,8 +247,8 @@ li:not(:last-child)::after {
 
 .services-circle {
     display: flex;
-    width: 54px;
-    height: 54px;
+    width: 55px;
+    height: 56px;
     border-radius: 54px;
     border: 2px solid #666d89;
     margin: 19px 0px 0px 16px;
@@ -410,16 +410,16 @@ li:not(:last-child)::after {
 /*icon*/
 
 .pen {
-    height: 32px;
+    height: 33px;
     margin: auto;
-    width: 32px;
+    width: 33px;
     background-image: url(./assets/pen.svg);
 }
 
 .phone {
-    height: 31px;
+    height: 32px;
     margin: auto;
-    width: 21px;
+    width: 22px;
     background-image: url(./assets/phone.svg);
 }
 
