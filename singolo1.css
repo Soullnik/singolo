@@ -32,16 +32,20 @@
     line-height: 12px;
     font-weight: bold;
     padding-top: 8px;
-    width: 410px;
+    width: 411px;
+    list-style-type: none;
 }
 
 .header-nav-item {
     display: flex;
-    justify-content: space-between;
-    margin: 34px 28px 0 0;
-    text-transform: uppercase;
-    letter-spacing: -0.37px;
-    list-style-type: none
+    margin: 35px 0 0 0;
+    letter-spacing: -0.39px;
+}
+
+li:not(:last-child)::after {
+    content: '\B7';
+    margin: 0 14.1px;
+    color: #494e62;
 }
 
 .header-nav-item a {
@@ -52,20 +56,9 @@
     height: 100%;
   }
   
-  .header-nav-item:not(:last-child)::after {
-    content: ".";
-    display: block;
-    width: 5px;
-    height: 5px;
-    position: absolute;
-    right: -18px;
-    top: -2px;
-    color: #494e62;
-  }
-  
-  .header-nav-item a:hover {
+.header-nav-item a:hover {
     color: #f06c64;
-  }
+}
 
 
 
@@ -73,10 +66,10 @@
 .logo {
     font-size: 25px;
     color: #ffffff;
-    margin: 31px 0 0 39px;
+    margin: 29px 0 0 40px;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: -1px;
+    letter-spacing: -0.6px;
 }
 
 .logo-star {
@@ -100,10 +93,10 @@
     display: flex;
     flex-direction: column;
     width: 215px;
-    height: 458px;
+    height: 456px;
     border-radius: 27px;
     background-color: #f2f2f2;
-    margin: 54px 138px 0px 0px;
+    margin: 54px 142px 0px 0px;
     box-shadow: 20px 21px 0px 5px rgba(0,0,0,0.1);
 }
 
@@ -159,7 +152,7 @@
     height: 458px;
     border-radius: 27px;
     background-color: #f2f2f2;
-    margin: 53px 148px 0px 0px;
+    margin: 53px 150px 0px 0px;
     box-shadow: 20px -21px 0px 5px rgba(0,0,0,0.1);
     transform: rotate(90deg);
 }
@@ -175,6 +168,8 @@
     background-position: center;
 }
 
+/*services*/
+
 .services-primary {
     display: flex;
     flex-wrap: wrap;
@@ -185,55 +180,38 @@
 }
 
 
-.services-primary .services-info {
+.services-info {
     width: 1020px;
     height: 200px;
 }
 
-.services-info h1 {
-    font-size: 28px;
-    line-height: 20px;
+.services-info > h1 {
+    font-size: 30px;
+    line-height: 16px;
     color: #666d89;
     font-weight: 700;
     margin: 69px 0px 0px 40px;
     letter-spacing: 0.1px;
 }
 
-.services-info p {
-    font-size: 17px;
-    line-height: 31px;
+.services-info > p {
+    font-size: 18px;
+    line-height: 1.75em;
     color: #767e9e;
     margin: 26px 0px 0px 40px;
     letter-spacing: -0.33px;
+    word-spacing: 2px;
 }
 
 .services-list {
     display: flex;
     height: 295px;
     width: 1200px;
-    margin: 0px 25px 0px 25px;
+    margin: 0px 36px 0px 25px;
 }
 
 .services-column {
     flex-grow: 1;
-}
-
-.services-list > h1 {
-    font-size: 18px;
-    line-height: 18px;
-    color: #666d89;
-    font-weight: 900;
-    text-align: left;
-}
-
-.services-list > p {
-    width: 219px;
-    height: 128px;
-    font-size: 12px;
-    line-height: 22px;
-    color: #767e9e;
-    font-weight: 400;
-    text-align: left;
 }
 
 .services-circle {
@@ -250,12 +228,11 @@
 }
 
 .services-text > h1 {
-    font-size: 17px;
-    line-height: 18px;
+    font-size: 18px;
+    line-height: 16px;
     color: #666d89;
     font-weight: 600;
-    letter-spacing: -0.1px;
-
+    word-spacing: 0.3px;
 }
 
 .services-text > p {
@@ -276,7 +253,7 @@
 
 .arrow-previous {
     height: 120px;
-    margin: 240px 0px 0px 35px;
+    margin: 238px 0px 0px 35px;
     transform: rotate(180deg);
 }
 
@@ -330,7 +307,7 @@
 
 .arrow-next {
     height: 120px;
-    margin: 230px 32px 0px 0px;
+    margin: 230px 34px 0px 0px;
     transform: rotate(0deg);
 }
 .arrow-next-top, 
