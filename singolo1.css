@@ -1,6 +1,36 @@
+/*Подключение шрифтов*/
+@font-face {
+    font-family: 'Lato Light';
+    src: url("./assets/fonts/Lato-Light.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato Regular';
+    src: url("./assets/fonts/Lato-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato Bold';
+    src: url("./assets/fonts/Lato-Bold.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato Black';
+    src: url("./assets/fonts/Lato-Black.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Стили */
 * {
-  margin: 0;
-  font-family: "Lato", sans-serif;
+    margin: 0;
+    font-family: "Lato Regular", sans-serif;
 }
 
 .wrapper {
@@ -14,7 +44,7 @@
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
     justify-content: space-between;
-    
+
 }
 
 .main {
@@ -39,12 +69,11 @@
 .header-nav-item {
     display: flex;
     margin: 35px 0 0 0;
-    letter-spacing: -0.39px;
 }
 
 li:not(:last-child)::after {
     content: '\B7';
-    margin: 0 14.1px;
+    margin: 0 12.7px;;
     color: #494e62;
 }
 
@@ -54,8 +83,8 @@ li:not(:last-child)::after {
     text-transform: uppercase;
     display: block;
     height: 100%;
-  }
-  
+}
+
 .header-nav-item a:hover {
     color: #f06c64;
 }
@@ -82,7 +111,7 @@ li:not(:last-child)::after {
 
 .menu {
     display: flex;
-    margin-right: 40px; 
+    margin-right: 40px;
     font-size: 8.65655pt;
     color: rgba(255, 255, 255, 255);
     text-transform: uppercase;
@@ -97,7 +126,7 @@ li:not(:last-child)::after {
     border-radius: 27px;
     background-color: #f2f2f2;
     margin: 54px 142px 0px 0px;
-    box-shadow: 20px 21px 0px 5px rgba(0,0,0,0.1);
+    box-shadow: 20px 21px 0px 5px rgba(0, 0, 0, 0.15);
 }
 
 .iphone-first-screen {
@@ -107,7 +136,7 @@ li:not(:last-child)::after {
     border-radius: 5px;
     margin: 21px 0px 0px 11px;
     justify-content: space-between;
-    background-image: url(./accets/screen-iphone-img.png);
+    background-image: url(./assets/screen-iphone-img.png);
     background-position: center;
 }
 
@@ -126,7 +155,7 @@ li:not(:last-child)::after {
     border-radius: 3px;
     background-color: #acacac;
     margin: 10px 89px 0px 90px;
-    
+
 }
 
 .iphone-circle {
@@ -153,7 +182,7 @@ li:not(:last-child)::after {
     border-radius: 27px;
     background-color: #f2f2f2;
     margin: 53px 150px 0px 0px;
-    box-shadow: 20px -21px 0px 5px rgba(0,0,0,0.1);
+    box-shadow: 20px -21px 0px 5px rgba(0, 0, 0, 0.15);
     transform: rotate(90deg);
 }
 
@@ -164,7 +193,7 @@ li:not(:last-child)::after {
     border-radius: 5px;
     margin: 21px 0px 0px 11px;
     justify-content: space-between;
-    background-image: url(./accets/screen-iphone-second-img.png);
+    background-image: url(./assets/screen-iphone-second-img.png);
     background-position: center;
 }
 
@@ -185,7 +214,7 @@ li:not(:last-child)::after {
     height: 200px;
 }
 
-.services-info > h1 {
+.services-info>h1 {
     font-size: 30px;
     line-height: 16px;
     color: #666d89;
@@ -194,7 +223,7 @@ li:not(:last-child)::after {
     letter-spacing: 0.1px;
 }
 
-.services-info > p {
+.services-info>p {
     font-size: 18px;
     height: -11px;
     line-height: 30px;
@@ -229,7 +258,7 @@ li:not(:last-child)::after {
     margin: 18px 0px 0px 20px;
 }
 
-.services-text > h1 {
+.services-text>h3 {
     font-size: 18px;
     line-height: 16px;
     color: #666d89;
@@ -237,7 +266,7 @@ li:not(:last-child)::after {
     word-spacing: 0.3px;
 }
 
-.services-text > p {
+.services-text>p {
     width: 218px;
     height: 80px;
     font-size: 11px;
@@ -260,7 +289,7 @@ li:not(:last-child)::after {
     transform: rotate(180deg);
 }
 
-.arrow-previous-top, 
+.arrow-previous-top,
 .arrow-previous-bottom {
     background: #ca4549;
     height: 6px;
@@ -269,18 +298,22 @@ li:not(:last-child)::after {
     top: 60px;
     width: 20px;
 }
+
 .arrow-previous-top {
     top: 62px;
 }
+
 .arrow-previous-top {
     transform: rotate(45deg);
     transform-origin: bottom right;
 }
+
 .arrow-previous-bottom {
     transform: rotate(-45deg);
     transform-origin: top right;
 }
-.arrow-previous-top::after, 
+
+.arrow-previous-top::after,
 .arrow-previous-bottom::after {
     background: #000;
     content: '';
@@ -289,20 +322,24 @@ li:not(:last-child)::after {
     top: 0;
     transition: all 0.15s;
 }
+
 .arrow-previous-top::after {
     left: 100%;
     right: 0;
     transition-delay: 0s;
 }
+
 .arrow-previous-bottom::after {
     left: 0;
     right: 100%;
     transition-delay: 0.15s;
 }
+
 .arrow-previous:hover .arrow-previous-top::after {
     left: 0;
     transition-delay: 0.15s;
 }
+
 .arrow-previous:hover .arrow-previous-bottom::after {
     right: 0;
     transition-delay: 0s;
@@ -313,7 +350,8 @@ li:not(:last-child)::after {
     margin: 230px 34px 0px 0px;
     transform: rotate(0deg);
 }
-.arrow-next-top, 
+
+.arrow-next-top,
 .arrow-next-bottom {
     background: #ca4549;
     height: 6px;
@@ -322,18 +360,22 @@ li:not(:last-child)::after {
     top: 60px;
     width: 20px;
 }
+
 .arrow-next-top {
     top: 62px;
 }
+
 .arrow-next-top {
     transform: rotate(45deg);
     transform-origin: bottom right;
 }
+
 .arrow-next-bottom {
     transform: rotate(-45deg);
     transform-origin: top right;
 }
-.arrow-next-top::after, 
+
+.arrow-next-top::after,
 .arrow-next-bottom::after {
     background: #000;
     content: '';
@@ -342,20 +384,24 @@ li:not(:last-child)::after {
     top: 0;
     transition: all 0.15s;
 }
+
 .arrow-next-top::after {
     left: 100%;
     right: 0;
     transition-delay: 0s;
 }
+
 .arrow-next-bottom::after {
     left: 0;
     right: 100%;
     transition-delay: 0.15s;
 }
+
 .arrow-next:hover .arrow-next-top::after {
     left: 0;
     transition-delay: 0.15s;
 }
+
 .arrow-next:hover .arrow-next-bottom::after {
     right: 0;
     transition-delay: 0s;
@@ -367,40 +413,40 @@ li:not(:last-child)::after {
     height: 32px;
     margin: auto;
     width: 32px;
-    background-image: url(./accets/pen.svg);
+    background-image: url(./assets/pen.svg);
 }
 
 .phone {
     height: 31px;
     margin: auto;
     width: 21px;
-    background-image: url(./accets/phone.svg);
+    background-image: url(./assets/phone.svg);
 }
 
 .bulb {
     height: 32px;
     margin: auto;
     width: 32px;
-    background-image: url(./accets/bulb.svg);
+    background-image: url(./assets/bulb.svg);
 }
 
 .bubble {
     height: 28px;
     margin: auto;
     width: 32px;
-    background-image: url(./accets/bubble.svg);
+    background-image: url(./assets/bubble.svg);
 }
 
 .heart {
     height: 28px;
     margin: auto;
     width: 32px;
-    background-image: url(./accets/heart.svg);
+    background-image: url(./assets/heart.svg);
 }
 
 .star {
     height: 28px;
     margin: auto;
     width: 29px;
-    background-image: url(./accets/star.svg);
+    background-image: url(./assets/star.svg);
 }
