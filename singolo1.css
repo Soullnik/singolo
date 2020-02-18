@@ -1,7 +1,7 @@
-@font-face {
-    font-family: "Lato";
-    src: url("/accets/Lato-Regular.ttf.ttf") format("TrueType");
-   }
+* {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
 
 .wrapper {
     width: 1020px;
@@ -19,6 +19,7 @@
 
 .main {
     display: flex;
+    justify-content: space-between;
     height: 595px;
     background-color: #f06c64;
     border-bottom: 5px solid #ea676b;
@@ -26,55 +27,57 @@
 
 
 .navigation {
-    display: block;
-    width: 410px;
-    margin: 0 0px 0 385px;
-}
-
-.navigation ul {
     display: flex;
-    justify-content: space-between;
-    margin: 40px 40px 0 0;
-    text-transform: uppercase;
-    letter-spacing: -0.1px;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: bold;
+    padding-top: 8px;
+    width: 411px;
+    list-style-type: none;
 }
 
-li {
-    list-style: disc;
+.header-nav-item {
+    display: flex;
+    margin: 35px 0 0 0;
+    letter-spacing: -0.39px;
+}
+
+li:not(:last-child)::after {
+    content: '\B7';
+    margin: 0 14.1px;
     color: #494e62;
 }
 
-li:first-child {
-    color:#2d303a;
-}
-
-
-
-
-.navigation ul li a {
-    display: flex;
+.header-nav-item a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 12px;
-}
-
-.navigation ul li a:hover {
+    text-transform: uppercase;
+    display: block;
+    height: 100%;
+  }
+  
+.header-nav-item a:hover {
     color: #f06c64;
 }
+
+
+
 
 .logo {
     font-size: 25px;
     color: #ffffff;
-    font-weight: 700;
-    margin: 32px 0 0 39px;
+    margin: 29px 0 0 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -0.6px;
 }
 
-.logoUp {
-    font-size: 25px;
+.logo-star {
     color: #f06c64;
-    font-weight: 700;
-    margin: 32px 65px 0px 0px;
+    font-size: 82%;
+    font-family: serif;
+    position: relative;
+    bottom: 5px;
 }
 
 .menu {
@@ -90,10 +93,10 @@ li:first-child {
     display: flex;
     flex-direction: column;
     width: 215px;
-    height: 458px;
+    height: 456px;
     border-radius: 27px;
     background-color: #f2f2f2;
-    margin: 54px 0px 0px 112px;
+    margin: 54px 142px 0px 0px;
     box-shadow: 20px 21px 0px 5px rgba(0,0,0,0.1);
 }
 
@@ -149,7 +152,7 @@ li:first-child {
     height: 458px;
     border-radius: 27px;
     background-color: #f2f2f2;
-    margin: 53px 0px 0px 219px;
+    margin: 53px 150px 0px 0px;
     box-shadow: 20px -21px 0px 5px rgba(0,0,0,0.1);
     transform: rotate(90deg);
 }
@@ -165,7 +168,9 @@ li:first-child {
     background-position: center;
 }
 
-.menu-primary {
+/*services*/
+
+.services-primary {
     display: flex;
     flex-wrap: wrap;
     width: 1020px;
@@ -175,58 +180,43 @@ li:first-child {
 }
 
 
-.menu-primary .asid-info {
+.services-info {
     width: 1020px;
     height: 200px;
 }
 
-.asid-info h1 {
+.services-info > h1 {
     font-size: 30px;
-    line-height: 18px;
+    line-height: 16px;
     color: #666d89;
-    font-weight: 900;
-    text-align: left;
+    font-weight: 700;
     margin: 69px 0px 0px 40px;
+    letter-spacing: 0.1px;
 }
 
-.asid-info p {
+.services-info > p {
     font-size: 18px;
-    line-height: 31px;
+    height: -11px;
+    line-height: 30px;
     color: #767e9e;
-    margin: 26px 0px 0px 40px;
-    letter-spacing: -0.06px;
+    margin: 27px 42px 0px 40px;
+    letter-spacing: -0.4px;
+    word-spacing: 2.2px;
+    text-align: justify;
 }
 
-.asid-menu {
+.services-list {
     display: flex;
     height: 295px;
     width: 1200px;
-    margin: 0px 25px 0px 25px;
+    margin: 0px 36px 0px 25px;
 }
 
-.asid-column {
+.services-column {
     flex-grow: 1;
 }
 
-.asid-menu > h1 {
-    font-size: 18px;
-    line-height: 18px;
-    color: #666d89;
-    font-weight: 900;
-    text-align: left;
-}
-
-.asid-menu > p {
-    width: 219px;
-    height: 128px;
-    font-size: 12px;
-    line-height: 22px;
-    color: #767e9e;
-    font-weight: 400;
-    text-align: left;
-}
-
-.asid-circle {
+.services-circle {
     display: flex;
     width: 54px;
     height: 54px;
@@ -235,43 +225,44 @@ li:first-child {
     margin: 19px 0px 0px 16px;
 }
 
-.asid-text {
+.services-text {
     margin: 18px 0px 0px 20px;
 }
 
-.asid-text > h1 {
+.services-text > h1 {
     font-size: 18px;
-    line-height: 18px;
+    line-height: 16px;
     color: #666d89;
-    font-weight: 900;
+    font-weight: 600;
+    word-spacing: 0.3px;
 }
 
-.asid-text > p {
+.services-text > p {
     width: 218px;
-    height: 79px;
-    font-size: 12px;
+    height: 80px;
+    font-size: 11px;
     line-height: 22px;
     color: #767e9e;
     margin: 10px 0px 0px 0px;
+    word-spacing: 2px;
+    text-align: justify;
 }
 
-.asid-row {
+.services-row {
     display: flex;
 }
 
 /* ARROW */
 
 .arrow-previous {
-    cursor: pointer;
     height: 120px;
-    position: absolute;
-    margin: 239px 0px 0px 35px;
+    margin: 238px 0px 0px 35px;
     transform: rotate(180deg);
-
 }
+
 .arrow-previous-top, 
 .arrow-previous-bottom {
-    background: rgba(0,0,0,0.2);
+    background: #ca4549;
     height: 6px;
     left: -30px;
     position: absolute;
@@ -318,14 +309,13 @@ li:first-child {
 }
 
 .arrow-next {
-    cursor: pointer;
     height: 120px;
-    position: absolute;
-    margin: 232px 0px 0px 988px;
+    margin: 230px 34px 0px 0px;
+    transform: rotate(0deg);
 }
 .arrow-next-top, 
 .arrow-next-bottom {
-    background: rgba(0,0,0,0.2);
+    background: #ca4549;
     height: 6px;
     left: -30px;
     position: absolute;
