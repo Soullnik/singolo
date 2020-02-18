@@ -214,16 +214,16 @@ li:not(:last-child)::after {
     height: 200px;
 }
 
-.services-info>h1 {
+.services-info > h1 {
     font-size: 30px;
     line-height: 16px;
     color: #666d89;
     font-weight: 700;
     margin: 69px 0px 0px 40px;
-    letter-spacing: 0.1px;
+    letter-spacing: 0.3px;
 }
 
-.services-info>p {
+.services-info > p {
     font-size: 18px;
     height: -11px;
     line-height: 30px;
