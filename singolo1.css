@@ -196,11 +196,12 @@ li:not(:last-child)::after {
 
 .services-info > p {
     font-size: 18px;
-    line-height: 1.75em;
+    height: -11px;
+    line-height: 30px;
     color: #767e9e;
-    margin: 26px 0px 0px 40px;
-    /* letter-spacing: -0.33px; */
-    word-spacing: -1px;
+    margin: 27px 42px 0px 40px;
+    letter-spacing: -0.4px;
+    word-spacing: 2.2px;
     text-align: justify;
 }
 
