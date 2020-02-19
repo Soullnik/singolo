@@ -122,7 +122,7 @@ li:not(:last-child)::after {
     display: flex;
     flex-direction: column;
     width: 215px;
-    height: 456px;
+    height: 458px;
     border-radius: 27px;
     background-color: #f2f2f2;
     margin: 54px 142px 0px 0px;
@@ -136,17 +136,17 @@ li:not(:last-child)::after {
     border-radius: 5px;
     margin: 21px 0px 0px 11px;
     justify-content: space-between;
-    background-image: url(./assets/screen-iphone-img.png);
-    background-position: center;
+    background-image: url(./assets/screen-iphone-first.svg);
+    background-position: -13px -134.5px;;
 }
 
 .iphone-cam {
     width: 4px;
     height: 4px;
     border-radius: 7px;
-    border: 3px solid #d8d8d8;
+    border: 2.3px solid #d8d8d8;
     background-color: #eb5055;
-    margin: 15px 102px 0 102px;
+    margin: 16px 0 0 104px;
 }
 
 .iphone-speaker {
@@ -181,7 +181,7 @@ li:not(:last-child)::after {
     height: 458px;
     border-radius: 27px;
     background-color: #f2f2f2;
-    margin: 53px 150px 0px 0px;
+    margin: 53px 148px 0px 0px;
     box-shadow: 20px -21px 0px 5px rgba(0, 0, 0, 0.15);
     transform: rotate(90deg);
 }
@@ -193,8 +193,8 @@ li:not(:last-child)::after {
     border-radius: 5px;
     margin: 21px 0px 0px 11px;
     justify-content: space-between;
-    background-image: url(./assets/screen-iphone-second-img.png);
-    background-position: center;
+    background-image: url(./assets/screen-iphone-second.svg);
+    background-position: -119.5px -123px;
 }
 
 /*services*/
@@ -306,11 +306,13 @@ li:not(:last-child)::after {
 .arrow-previous-top {
     transform: rotate(45deg);
     transform-origin: bottom right;
+    border-radius: 6px;
 }
 
 .arrow-previous-bottom {
     transform: rotate(-45deg);
     transform-origin: top right;
+    border-radius: 6px;
 }
 
 .arrow-previous-top::after,
@@ -327,22 +329,26 @@ li:not(:last-child)::after {
     left: 100%;
     right: 0;
     transition-delay: 0s;
+    border-radius: 6px;
 }
 
 .arrow-previous-bottom::after {
     left: 0;
     right: 100%;
     transition-delay: 0.15s;
+    border-radius: 6px;
 }
 
 .arrow-previous:hover .arrow-previous-top::after {
     left: 0;
     transition-delay: 0.15s;
+    border-radius: 6px;
 }
 
 .arrow-previous:hover .arrow-previous-bottom::after {
     right: 0;
     transition-delay: 0s;
+    border-radius: 6px;
 }
 
 .arrow-next {
@@ -359,6 +365,7 @@ li:not(:last-child)::after {
     position: absolute;
     top: 60px;
     width: 20px;
+    border-radius: 6px;
 }
 
 .arrow-next-top {
@@ -383,6 +390,7 @@ li:not(:last-child)::after {
     position: absolute;
     top: 0;
     transition: all 0.15s;
+    border-radius: 6px;
 }
 
 .arrow-next-top::after {
