@@ -113,7 +113,7 @@ li:not(:last-child)::after {
     display: flex;
     margin-right: 40px;
     font-size: 8.65655pt;
-    color: rgba(255, 255, 255, 255);
+    color: rgba(255, 255, 255);
     text-transform: uppercase;
 }
 
