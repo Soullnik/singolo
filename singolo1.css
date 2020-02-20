@@ -66,18 +66,18 @@
     list-style-type: none;
 }
 
-.header-nav-item {
+.list-nav-item {
     display: flex;
     margin: 35px 0 0 0;
 }
 
-li:not(:last-child)::after {
+.list-nav-item:not(:last-child)::after {
     content: '\B7';
     margin: 0 12.7px;;
     color: #494e62;
 }
 
-.header-nav-item a {
+.list-link {
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
@@ -85,7 +85,11 @@ li:not(:last-child)::after {
     height: 100%;
 }
 
-.header-nav-item a:hover {
+.list-link:hover {
+    color: #f06c64;
+}
+
+.list-link-active {
     color: #f06c64;
 }
 
@@ -219,6 +223,7 @@ li:not(:last-child)::after {
     margin: 69px 0px 0px 40px;
     letter-spacing: 0.3px;
 }
+
 
 .services-info > p {
     font-size: 18px;
