@@ -89,9 +89,6 @@ li:not(:last-child)::after {
     color: #f06c64;
 }
 
-
-
-
 .logo {
     font-size: 25px;
     color: #ffffff;
@@ -214,7 +211,7 @@ li:not(:last-child)::after {
     height: 200px;
 }
 
-.services-info > h1 {
+.services-info > h2 {
     font-size: 30px;
     line-height: 16px;
     color: #666d89;
@@ -258,7 +255,7 @@ li:not(:last-child)::after {
     margin: 18px 0px 0px 20px;
 }
 
-.services-text>h3 {
+.services-text > h3 {
     font-size: 18px;
     line-height: 16px;
     color: #666d89;
@@ -266,7 +263,7 @@ li:not(:last-child)::after {
     word-spacing: 0.3px;
 }
 
-.services-text>p {
+.services-text > p {
     width: 218px;
     height: 80px;
     font-size: 11px;
@@ -286,6 +283,7 @@ li:not(:last-child)::after {
 .arrow-previous {
     height: 120px;
     margin: 238px 0px 0px 35px;
+    cursor: pointer;
     transform: rotate(180deg);
 }
 
@@ -354,6 +352,7 @@ li:not(:last-child)::after {
 .arrow-next {
     height: 120px;
     margin: 230px 34px 0px 0px;
+    cursor: pointer;
     transform: rotate(0deg);
 }
 
