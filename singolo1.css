@@ -1,4 +1,4 @@
-/*Подключение шрифтов*/
+/*Fonts*/
 @font-face {
     font-family: 'Lato Light';
     src: url("./assets/fonts/Lato-Light.ttf") format('truetype');
@@ -27,11 +27,13 @@
     font-style: normal;
 }
 
-/* Стили */
+/* style */
 * {
     margin: 0;
     font-family: "Lato Regular", sans-serif;
 }
+
+/*container */
 
 .wrapper {
     width: 1020px;
@@ -47,15 +49,7 @@
 
 }
 
-.main {
-    display: flex;
-    justify-content: space-between;
-    height: 595px;
-    background-color: #f06c64;
-    border-bottom: 5px solid #ea676b;
-}
-
-
+/*container navigation */
 .navigation {
     display: flex;
     font-size: 12px;
@@ -93,6 +87,8 @@
     color: #f06c64;
 }
 
+/*logo */
+
 .logo {
     font-size: 25px;
     color: #ffffff;
@@ -103,11 +99,21 @@
 }
 
 .logo-star {
-    color: #f06c64;
-    font-size: 82%;
-    font-family: serif;
     position: relative;
     bottom: 5px;
+    font-size: 82%;
+    font-family: serif;
+    color: #f06c64; 
+}
+
+/* main container*/
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    height: 595px;
+    background-color: #f06c64;
+    border-bottom: 5px solid #ea676b;
 }
 
 .menu {
