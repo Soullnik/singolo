@@ -27,11 +27,6 @@
     font-style: normal;
 }
 
-/* style */
-* {
-    margin: 0;
-    font-family: "Lato Regular", sans-serif;
-}
 
 /*container */
 
@@ -53,30 +48,27 @@
 .navigation {
     display: flex;
     font-size: 12px;
-    line-height: 12px;
-    font-weight: bold;
-    padding-top: 8px;
+    line-height: 13px;
     width: 411px;
-    list-style-type: none;
 }
 
 .list-nav-item {
     display: flex;
-    margin: 35px 0 0 0;
+    margin: 43px 0 0 0;
 }
 
 .list-nav-item:not(:last-child)::after {
     content: '\B7';
-    margin: 0 12.7px;;
+    font-size: 22px;
+    margin: 1.2px 10.9px 1.2px 10.5px;
     color: #494e62;
 }
 
 .list-link {
+    font-family: "Lato Bold";
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
-    display: block;
-    height: 100%;
 }
 
 .list-link:hover {
@@ -90,20 +82,18 @@
 /*logo */
 
 .logo {
+    font-family: "Lato Bold";
     font-size: 25px;
     color: #ffffff;
-    margin: 29px 0 0 40px;
-    font-weight: 500;
+    margin: 31px 0 0 40px;
     text-transform: uppercase;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.5px;
 }
 
 .logo-star {
     position: relative;
-    bottom: 5px;
-    font-size: 82%;
-    font-family: serif;
-    color: #f06c64; 
+    font-family: "Lato Bold";
+    color: #f06c64;
 }
 
 /* main container*/
@@ -216,30 +206,29 @@
 }
 
 
-.services-info {
+.services-conteiner {
     width: 1020px;
     height: 200px;
 }
 
-.services-info > h2 {
+.services-title {
+    font-family: "Lato Black";
     font-size: 30px;
     line-height: 16px;
     color: #666d89;
-    font-weight: 700;
     margin: 69px 0px 0px 40px;
-    letter-spacing: 0.3px;
+    letter-spacing: -0.2px;
 }
 
 
-.services-info > p {
+.services-info {
     font-size: 18px;
-    height: -11px;
-    line-height: 30px;
+    line-height: 31px;
     color: #767e9e;
-    margin: 27px 42px 0px 40px;
-    letter-spacing: -0.4px;
-    word-spacing: 2.2px;
-    text-align: justify;
+    margin: 27px 40px 0px 40px;
+    font-family: "Lato Light";
+    letter-spacing: -0.17px;
+    word-spacing: 2.4px;
 }
 
 .services-list {
@@ -266,22 +255,24 @@
     margin: 18px 0px 0px 20px;
 }
 
-.services-text > h3 {
+.services-title-column {
     font-size: 18px;
     line-height: 16px;
+    font-family: "Lato Black";
     color: #666d89;
     font-weight: 600;
+    letter-spacing: -0.2px;
     word-spacing: 0.3px;
 }
 
-.services-text > p {
-    width: 218px;
-    height: 80px;
-    font-size: 11px;
+.services-text-column {
+    width: 219px;
+    height: 78px;
+    font-size: 12px;
     line-height: 22px;
+    font-family: "Lato Regular";
     color: #767e9e;
-    margin: 10px 0px 0px 0px;
-    word-spacing: 2px;
+    margin: 11px 0px 0px 0px;
     text-align: justify;
 }
 
@@ -428,9 +419,9 @@
 /*icon*/
 
 .pen {
-    height: 33px;
+    height: 32px;
     margin: auto;
-    width: 33px;
+    width: 32px;
     background-image: url(./assets/pen.svg);
 }
 
@@ -463,8 +454,8 @@
 }
 
 .star {
-    height: 28px;
+    height: 30px;
     margin: auto;
-    width: 29px;
+    width: 31px;
     background-image: url(./assets/star.svg);
 }
