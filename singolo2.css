@@ -1,4 +1,19 @@
 /*Fonts*/
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+.social a {
+    text-align: center;
+    width: 48px;
+    height: 48px;
+    float: left;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 0 50px rgba(0,0,0,0.1);
+    border-radius: 24px;
+    margin: 0 10px 10px 0;
+    padding: 6px;
+    color: #000;
+}
+
 @font-face {
     font-family: 'Lato Light';
     src: url("./assets/fonts/Lato-Light.ttf") format('truetype');
@@ -27,6 +42,10 @@
     font-style: normal;
 }
 
+.google a:hover {background: #DD4B39; color: #fff;}
+.twitter a:hover {background: #00acee; color: #fff;}
+.facebook a:hover {background: #3b5998; color: #fff;}
+.linkedin a:hover {background: #0e76a8; color: #fff;}
 
 /*container */
 
@@ -35,33 +54,65 @@
     margin: 0 auto;
 }
 
-.header-container {
+
+.portfolio {
     display: flex;
-    height: 89px;
+    flex-direction: column;
+    height: 870px;
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
-    justify-content: space-between;
-
 }
 
-/*container navigation */
-.navigation {
+.about-us {
     display: flex;
-    font-size: 12px;
-    line-height: 13px;
-    width: 411px;
+    flex-direction: column;
+    height: 728px;
+    background-color: #f2f2f2;
+    border-bottom: 6px solid  #ffffff;
 }
 
-.list-nav-item {
+/*filling portfolio */
+
+.portfolio__title {
+    font-family: "Lato Black";
+    font-size: 30px;
+    line-height: 16px;
+    color: #666d89;
+    margin: 69px 0px 0px 40px;
+    letter-spacing: -0.2px;
+}
+
+
+.portfolio__info {
+    font-size: 18px;
+    line-height: 31px;
+    color: #767e9e;
+    margin: 27px 40px 0px 40px;
+    font-family: "Lato Light";
+    letter-spacing: -0.17px;
+    word-spacing: 2.4px;
+}
+.portfolio__tags {
+    display: flex;
+}
+
+.tag {
     display: flex;
     margin: 43px 0 0 0;
 }
 
-.list-nav-item:not(:last-child)::after {
+/* .list-nav-item:not(:last-child)::after {
     content: '\B7';
     font-size: 22px;
     margin: 1.2px 11.6px 1.2px 12px;
-    color: #494e62;
+    color: #494e62; */
+}
+.tag_selected {
+
+}
+
+.tag_bordered {
+
 }
 
 .list-link {
@@ -209,25 +260,7 @@
     height: 200px;
 }
 
-.services-title {
-    font-family: "Lato Black";
-    font-size: 30px;
-    line-height: 16px;
-    color: #666d89;
-    margin: 69px 0px 0px 40px;
-    letter-spacing: -0.2px;
-}
 
-
-.services-info {
-    font-size: 18px;
-    line-height: 31px;
-    color: #767e9e;
-    margin: 27px 40px 0px 40px;
-    font-family: "Lato Light";
-    letter-spacing: -0.17px;
-    word-spacing: 2.4px;
-}
 
 .services-list {
     display: flex;
