@@ -38,3 +38,28 @@
 .layout-2-column {
     display: flex;
 }
+
+.tool {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-box {
+    display: flex;
+    width: 154px;
+    margin-top: 36px;
+    justify-content: space-between;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    float: left;
+    border: 1px solid #666d89;
+    border-radius: 24px;
+}
+
+.google:hover {background: #DD4B39; color: #fff;}
+.twitter:hover {background: #00acee; color: #fff;}
+.facebook:hover {background: #3b5998; color: #fff;}
+.linkedin:hover {background: #0e76a8; color: #fff;}
