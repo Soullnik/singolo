@@ -26,6 +26,7 @@
     font-style: normal;
 }
 
+
 /*container */
 
 /* * {
@@ -59,36 +60,35 @@
 /*filling portfolio */
 
 
-.portfolio__title {
-    font-family: "Lato Black";
+.portfolio--title {
+    font-family: "Lato Black", sans-serif;
     font-size: 30px;
     color: #666d89;
-    margin-bottom: 27px;
 }
 
-.portfolio__info {
+.portfolio--info {
     font-size: 18px;
     color: #767e9e;
-    font-family: "Lato Light";
+    font-family: "Lato Light", sans-serif;
 }
 
-.portfolio__tags {
+.portfolio--tags {
     display: flex;
     margin: 10px 0px 18.6px 0px;
 }
 
 .tag {
-    cursor: pointer;
+    font-family: "Lato Regular", sans-serif;
+    margin-right: 11.3px;
     font-size: 12px;
+    line-height: 16px;
+    padding: 3px 6.9px;
     color: #767e9e;
     border-radius: 4px;
     border: 0.7px solid #767e9e;
-    padding: 5px 7px 5px 7px;
-    margin-right: 11.3px;
-    font-family: "Lato Regular";
-}
-.tag {
-    font-weight: 400;
+    cursor: pointer;
+    letter-spacing: -0.33px;
+    transition: all .1s linear;
 }
 
 
@@ -103,101 +103,41 @@
 }
 
 /*imG*/
-
-.portfolio__img {
+.layout_four_column {
     display: flex;
-    overflow: hidden;
-    flex-wrap: wrap;
-    height: 607px;
-    width: 969px;
+    justify-content: space-between;
+    height: 601px;
+  }
+
+.layout_four_column--img {
+    width: 220px; 
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.img_block {
-    width: 220px;
-    height: 187px;
-    margin-bottom: 20px;
-    margin-right: 20px;
+.layout_four_column--img:nth-child(n+5){
+    display:none;
 }
 
-.img_1 {
-    background-image: url(assets/pic_1.png);
-    background-position: -8px -11px;
+.layout_four_column--img > img:nth-child(n+4){
+    display:none;
 }
-
-.img_2 {
-    background-image: url(assets/pic_2.png);
-    background-position: -82px -43px;
-}
-
-.img_3 {
-    background-image: url(assets/pic_3.png);
-    background-position: -11px -1px;
-}
-
-.img_4 {
-    background-image: url(assets/pic_4.png);
-    background-position: -24px -2px;
-}
-
-.img_5 {
-    background-image: url(assets/pic_5.png);
-    background-position: -10px -16px
-}
-
-.img_6 {
-    background-image: url(assets/pic_6.png);
-    background-position: -16px -4px;
-}
-
-.img_7 {
-    background-image: url(assets/pic_7.png);
-    background-position: -31px -39px
-}
-
-.img_8 {
-    background-image: url(assets/pic_8.png);
-    background-position: -24px -32px;
-}
-
-.img_9 {
-    background-image: url(assets/pic_9.png);
-    background-position: -16px -2px;
-}
-
-.img_10 {
-    background-image: url(assets/pic_10.png);
-    background-position: -141px -113px;
-}
-
-.img_11 {
-    background-image: url(assets/pic_11.png);
-    background-position: -144px -175px;
-}
-
-.img_12 {
-    background-image: url(assets/pic_12.png);
-    background-position: -36px -60px;
-}
-
-
-/*About US*/
 
 .title {
     font-size: 30px;
     color: #767e9e;
-    font-family: "Lato Black";
+    font-family: "Lato Black", sans-serif;
 }
 
-.main__info {
+.portfolio--main_info {
     font-size: 18px;
     line-height: 30px;
     color: #767e9e;
-    font-family: "Lato Light";
-}
-
-.portf-info {
+    font-family: "Lato Light", sans-serif;
     margin-top: 21px;
 }
+
 
 .about-us-info {
     margin-top: 21px;
@@ -218,6 +158,13 @@
     color: #767e9e;
     font-family: "Lato Black";
     margin-top: 14.5px;
+    font-family: 'Lato Black', sans-serif;
+	font-size: 18px;
+	letter-spacing: -0.006em;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin: 11px 0 0 -1px;
 }
 
 .employee_info {
@@ -225,26 +172,33 @@
     color: #767e9e;
     font-family: "Lato Regular";
     margin-top: 14.5px;
+    font-family: 'Lato Regular', sans-serif;
+	font-size: 12px;
+	text-align: justify;
+	margin-top: 8px;
+	line-height: 22px;
 }
 
-.social-box {
+.social {
     display: flex;
-    width: 154px;
-    margin-top: 36px;
+    width: 151.2px;
+    margin-top: 39.6px;
     justify-content: space-between;
 }
 
-
-
-.social-icon {
-    width: 32px;
-    height: 32px;
-    float: left;
-    border: 1px solid #666d89;
+.social--icon {
+    width: 30px;
+    height: 30px;
     border-radius: 24px;
 }
 
-.google:hover {background: #DD4B39; color: #fff;}
-.twitter:hover {background: #00acee; color: #fff;}
-.facebook:hover {background: #3b5998; color: #fff;}
-.linkedin:hover {background: #0e76a8; color: #fff;}
+.social--icon {
+	color: #666d89;
+	transition: transform .1s linear;
+}
+
+.social--icon:hover {
+	cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 1px 1px rgba(155, 148, 148, 0.75);
+}
