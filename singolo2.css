@@ -27,13 +27,6 @@
 }
 
 
-/*container */
-
-/* * {
-    margin: 0;
-    padding: 0;
-} */
-
 .wrapper {
     width: 1020px;
     margin: 0 auto;
@@ -74,20 +67,20 @@
 
 .portfolio--tags {
     display: flex;
-    margin: 10px 0px 18.6px 0px;
+    margin: 10.6px 0px 18.6px 0px
 }
 
 .tag {
     font-family: "Lato Regular", sans-serif;
-    margin-right: 11.3px;
-    font-size: 12px;
+    margin-right: 12.1px;
+    font-size: 12.1px;
     line-height: 16px;
-    padding: 3px 6.9px;
+    padding: 2.5px 6.9px;
     color: #767e9e;
     border-radius: 4px;
     border: 0.7px solid #767e9e;
     cursor: pointer;
-    letter-spacing: -0.33px;
+    letter-spacing: -0.35px;
     transition: all .1s linear;
 }
 
