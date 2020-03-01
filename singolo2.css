@@ -161,15 +161,14 @@
 }
 
 .employee_info {
-    font-size: 12px;
     color: #767e9e;
-    font-family: "Lato Regular";
-    margin-top: 14.5px;
-    font-family: 'Lato Regular', sans-serif;
-	font-size: 12px;
-	text-align: justify;
-	margin-top: 8px;
-	line-height: 22px;
+    font-family: 'Lato Black', sans-serif;
+    font-size: 18px;
+    letter-spacing: -0.006em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 13.6px 0 0 -0.2px;
 }
 
 .social {
