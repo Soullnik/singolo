@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 35" width="34" height="35">
+	<defs>
+		<image width="90" height="89" id="img1" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MCA4OSIgd2lkdGg9IjkwIiBoZWlnaHQ9Ijg5Ij4KCTxkZWZzPgoJCTxjbGlwUGF0aCBjbGlwUGF0aFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNwMSI+CgkJCTxwYXRoIGQ9Ik0wIDBMOTAgMEw5MCA4OUwwIDg5WiIgLz4KCQk8L2NsaXBQYXRoPgoJPC9kZWZzPgoJPHN0eWxlPgoJCXRzcGFuIHsgd2hpdGUtc3BhY2U6cHJlIH0KCQkuc2hwMCB7IGZpbGw6ICM2NjZkODl9IAoJPC9zdHlsZT4KCTxnIGlkPSJQYWdlIDEiIGNsaXAtcGF0aD0idXJsKCNjcDEpIj4KCQk8cGF0aCBpZD0iUGF0aCAxIiBjbGFzcz0ic2hwMCIgZD0iTTAuNTEgMjcuMUwxOS43NSAyNy4xTDE5Ljc1IDg5TDAuNTEgODlMMC41MSAyNy4xWk0yMC4zOCA5Ljg4QzIwLjM4IDE1LjIgMTYuNDUgMTkuNSAxMCAxOS41QzMuOTIgMTkuNSAwIDE1LjIgMCA5Ljg4QzAgNC40NCA0LjA1IDAuMjYgMTAuMjUgMC4yNkMxNi40NSAwLjI2IDIwLjI1IDQuNDQgMjAuMzggOS44OFpNMzEuMjYgNDYuODVDMzEuMjYgMzkuMTIgMzEuMDEgMzIuNjcgMzAuNzYgMjcuMUw0Ny40NiAyNy4xTDQ4LjM1IDM1LjcxTDQ4LjczIDM1LjcxQzUxLjI2IDMxLjY1IDU3LjQ3IDI1LjcgNjcuODUgMjUuN0M4MC41MSAyNS43IDkwIDM0LjE5IDkwIDUyLjQxTDkwIDg5TDcwLjc2IDg5TDcwLjc2IDU0LjY5QzcwLjc2IDQ2LjcyIDY3Ljk3IDQxLjI4IDYxLjAxIDQxLjI4QzU1LjY5IDQxLjI4IDUyLjUzIDQ0Ljk1IDUxLjE0IDQ4LjQ5QzUwLjYzIDQ5Ljc2IDUwLjUgNTEuNTMgNTAuNSA1My4zTDUwLjUgODlMMzEuMjYgODlMMzEuMjYgNDYuODVaIiAvPgoJPC9nPgo8L3N2Zz4="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: none;stroke: #666d89 } 
+	</style>
+	<g id="About Us">
+		<g id="Social Media">
+			<g id="LinkedIn">
+				<use id="linkedin" href="#img1" transform="matrix(0.156,0,0,0.158,10,10)"/>
+				<path id="Ellipse 2 copy 3" class="shp0" d="M17 1C25.84 1 33 8.16 33 17C33 25.84 25.84 33 17 33C8.16 33 1 25.84 1 17C1 8.16 8.16 1 17 1Z" />
+			</g>
+		</g>
+	</g>
+</svg>
