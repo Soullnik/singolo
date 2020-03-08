@@ -405,7 +405,7 @@
     border-color: #dedede;
 }
 
-.portfolio_container--tag :hover {
+.portfolio_container--tag:hover {
     color: #dedede;
     border-color: #dedede;
 }
