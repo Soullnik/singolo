@@ -61,7 +61,7 @@
     font-family: "Lato Bold";
     font-size: 25.5px;
     color: #ffffff;
-    margin-top: 29.4px;
+    margin-top: 32px;
     text-transform: uppercase;
     letter-spacing: -0.8px;
 }
@@ -86,7 +86,7 @@
 
 .header_container--item {
     display: flex;
-    margin-top: 41px;
+    margin-top: 42px;
 }
 
 .header_container--item:not(:last-child)::after {
@@ -129,7 +129,7 @@
     transition: transform .2s linear;
     height: 29px;
     width: 16px;
-    margin: 280.4px -0.5px;
+    margin: 280.4px 0.7px;
 }
 
 .slider_container--arrow:hover {
