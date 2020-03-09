@@ -51,7 +51,7 @@
 
 .header_container {
     display: flex;
-    height: 93px;
+    height: 95px;
     background-color: #2d303a;  
     border-bottom: 6px solid #323746;
     justify-content: space-between;
