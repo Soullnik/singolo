@@ -581,6 +581,7 @@
     border: 0px;
     background-color: #d6564f;
     padding: 14px;
+    resize: none;
 }
 
 .layout_two_column--form > input::placeholder, textarea::placeholder {
