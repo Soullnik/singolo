@@ -1,4 +1,6 @@
 # https://Soullnik.github.io/singolo/singolo.html
+# свяжитесь со мной если будут вопросы telegram : Nikolaj Lozickij Discord : soullnik
+#4585
 Iphone shadow сделана с помошью box-shadow поэтому имеются незначительные различия в тени
 
 Github pages настроенна на master branch
