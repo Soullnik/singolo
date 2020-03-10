@@ -1,4 +1,4 @@
-# https://Soullnik.github.io/singolo/singolo.html
+# https://Soullnik.github.io/singolo/index.html
 
 свяжитесь со мной если будут вопросы telegram : Nikolaj Lozickij Discord : Nikolay Lozitsiky (@Soullnik)
 
