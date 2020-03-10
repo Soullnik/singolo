@@ -6,6 +6,8 @@ phone shadow сделана с помошью box-shadow поэтому имею
 
 Github pages настроенна на master branch
 
+Изменил имена файлов singolo на index и style прошу понять и простить)
+
 **Структура**
 
 1. branch master - singolo 1 task
