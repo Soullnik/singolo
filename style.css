@@ -558,7 +558,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 44.4px;
-    height: 407px;
+    height: 405px;
 }
 
 .layout_two_column--form {
@@ -582,6 +582,7 @@
     background-color: #d6564f;
     padding: 14px;
     resize: none;
+    height: 203px;
 }
 
 .layout_two_column--form > input::placeholder, textarea::placeholder {
