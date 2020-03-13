@@ -9,27 +9,27 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     </head>
-    <body>
+    <body id="yakHomeContainer">
         <header class="header">
             <div class="wrapper">
                 <div class="header_container">
                     <h1 class="header_container--logo">singolo<span class="header_container--logo_star">*</span></h1>
                     <nav class="header_container--navigation">
-                        <ul class="header_container--list">
+                        <ul id="menu" class="header_container--list">
                             <li class="header_container--item">
-                                <a href="#" class="header_container--link header_container--link-active">home</a>
+                                <a href="#yakHomeContainer" class="header_container--link">home</a>
                             </li>
                             <li class="header_container--item">
-                                <a href="#" class="header_container--link">services</a> 
+                                <a href="#yakServicesContainer" class="header_container--link">services</a> 
                             </li>
                             <li class="header_container--item">
-                                <a href="#" class="header_container--link">portfolio</a> 
+                                <a href="#yakPortfolioContainer" class="header_container--link">portfolio</a> 
                             </li>
                             <li class="header_container--item">
-                                <a href="#" class="header_container--link">about</a> 
+                                <a href="#yakAboutUsContainer" class="header_container--link">about</a> 
                             </li>
                             <li class="header_container--item">
-                                <a href="#" class="header_container--link">contact</a> 
+                                <a href="#yakContactContainer" class="header_container--link">contact</a> 
                             </li>
                         </ul>
                     </nav>
@@ -38,22 +38,40 @@
         </header>
         <section class="slider">
             <div class="wrapper">
-                <div class="slider_container">
+                <div id="slider" class="slider_container">
                     <div class="slider_container--arrow slider_container--arrow-previous" alt="swipe previous"></div>
-                    <div class="iphone slider_container--iphone-first">
-                        <div class="iphone--cam"></div>
-                        <div class="iphone--speaker"></div>
-                        <div class="iphone--first-screen"></div>
-                        <div class="iphone--circle">
-                        <div class="iphone--square"></div>
+                    <div class="item_container slider_container--item-first">
+                        <div class="iphone slider_container--iphone-first">
+                            <div class="iphone--cam"></div>
+                            <div class="iphone--speaker"></div>
+                            <div class="iphone--screen"></div>
+                            <div class="iphone--button"></div>    
+                        </div>
+                        <div class="iphone slider_container--iphone-second">
+                            <div class="iphone--cam"></div>
+                            <div class="iphone--speaker"></div>
+                            <div class="iphone--screen iphone--screen-fir"></div>
+                            <div class="iphone--button"></div>    
                         </div>
                     </div>
-                    <div class="iphone slider_container--iphone-second">
-                        <div class="iphone--cam"></div>
-                        <div class="iphone--speaker"></div>
-                        <div class="iphone--second-screen"></div>
-                        <div class="iphone--circle">
-                        <div class="iphone--square"></div>
+                    <div class="item_container slider_container--item-second">
+                        <div class="iphone">
+                            <div class="iphone--cam"></div>
+                            <div class="iphone--speaker"></div>
+                            <div class="iphone--first-screen"></div>
+                            <div class="iphone--button"></div>    
+                        </div>
+                        <div class="iphone">
+                            <div class="iphone--cam"></div>
+                            <div class="iphone--speaker"></div>
+                            <div class="iphone--first-screen"></div>
+                            <div class="iphone--button"></div>    
+                        </div>
+                        <div class="iphone">
+                            <div class="iphone--cam"></div>
+                            <div class="iphone--speaker"></div>
+                            <div class="iphone--first-screen"></div>
+                            <div class="iphone--button"></div>    
                         </div>
                     </div>
                     <div class="slider_container--arrow slider_container--arrow-next" alt="swipe next"></div>
@@ -62,7 +80,7 @@
         </section>
         <section class="services">
             <div class="wrapper">
-                <div class="services_container">
+                <div id="yakServicesContainer" class="services_container">
                     <h2 class="services_container--title">Our Services</h2>
                     <p class="services_container--text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duls mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     <div class="layout_three_column--services">
@@ -132,7 +150,7 @@
         </section>
         <section class="portfolio">
             <div class="wrapper">
-                <div class="portfolio_container">
+                <div id="yakPortfolioContainer" class="portfolio_container">
                     <h2 class="portfolio_container--title">Portfolio</h2>
                     <p class="portfolio_container--info">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
                     </p>
@@ -169,7 +187,7 @@
         </section> 
         <section class="about_us">
             <div class="wrapper">
-                <div class="about_us_container">
+                <div id="yakAboutUsContainer" class="about_us_container">
                     <h2 class="about_us_container--title">About Us</h2>
                     <p class="about_us_container--info">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     <div class="layout_three_column--employee">
@@ -215,7 +233,7 @@
         </section>
         <section class="contact_us">
             <div class="wrapper">
-                <div class="contact_us_container">
+                <div id="yakContactContainer" class="contact_us_container">
                     <h2 class="contact_us_container--title">Get a Quote</h2>
                     <p class="contact_us_container--info">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                     <div class="layout_two_column">
@@ -252,5 +270,6 @@
                 </div>                        
             </div>  
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>
