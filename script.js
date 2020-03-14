@@ -51,22 +51,6 @@ document.querySelector('.slider_container--arrow-next').addEventListener('click'
   }
 }) 
 
-// const swiper = (event) => {
-//   if (event.target.classList.contains('slider_container--arrow')) {
-//     const interSwipe = setInterval (() => {
-//       items.forEach((elem) => {
-//         console.log(elem.style.right)
-//         if (getComputedStyle(elem).right === '1530px') {
-//           clearInterval(interSwipe);
-//           return;  
-//         }
-//         swipeCounter += 1;
-//         elem.style.right = `${swipeCounter}px`;
-//       })
-//     }, 1000)
-//   }
-// }; 
-
 const menuScroll = (event) => {
   if(event.target.tagName === 'A')
   event.preventDefault();
@@ -80,15 +64,19 @@ const menuScroll = (event) => {
 }
 
 const screenActive = (event) => {
+  console.log(event.target.parentElement.classList)
   if (event.target.classList.contains('iphone--button')) {
     const phoneScreen = event.target.parentElement.querySelector('.iphone--screen');
     const first = event.target.parentElement.classList.contains('slider_container--iphone-first');
     const second = event.target.parentElement.classList.contains('slider_container--iphone-second');
+    const third = event.target.parentElement.classList.contains('iphone_second');
     const changeClass = phoneScreen.classList;
     if (first) {
     (changeClass.contains('iphone--screen_first')) ? changeClass.remove('iphone--screen_first') : changeClass.add('iphone--screen_first');
     } else if (second) {
     (changeClass.contains('iphone--screen_second')) ? changeClass.remove('iphone--screen_second') : changeClass.add('iphone--screen_second');
+    } else if (third) {
+    (changeClass.contains('iphone--screen_first')) ? changeClass.remove('iphone--screen_first') : changeClass.add('iphone--screen_first');
     }
   }
 };
@@ -98,7 +86,6 @@ const init = () => {
   items.forEach((elem) => {
     elem.addEventListener('click', screenActive)
   })
-  // slider.addEventListener('click', swiper)
 }
 
 init();

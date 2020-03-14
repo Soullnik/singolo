@@ -249,16 +249,19 @@
     box-shadow: 21px 21px 0px 4px rgba(0, 0, 0, 0.15);
 }
 
-.iphone_second--slide-left {
+.iphone_second  {
+    position: absolute;
     width: 140.02px;
     height: 298px;
-    left: 252px;
     top: 157px;
-    
+}
+
+.iphone_second--left {
+    left: 252px;
     opacity: 0.5;
 }
 
-.iphone_second--slide-center {
+.iphone_second--center {
     width: 229.61px;
     height: 486.3px;
     left: 383px;
@@ -266,12 +269,8 @@
     z-index: 1;
 }
 
-.iphone_second--slide-right {
-    width: 140.02px;
-    height: 298px;
-    left: 612.16px;
-    top: 157px;
-
+.iphone_second--right {
+    right: 267px;
     opacity: 0.5;
 } 
 
@@ -312,7 +311,7 @@
     background-image: url(assets/home_button.svg);
     background-position: center;
     background-repeat: no-repeat;
-
+    background-size: 48%;
 }
 
 .iphone--button:hover {
