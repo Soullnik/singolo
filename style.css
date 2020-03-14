@@ -124,34 +124,80 @@
 .slider_container {
     display: flex;
     height: 600px;
-    background-color: #f06c64;
-    border-bottom: 6px solid #ea676b;
     overflow: hidden;
     position: relative;
 }
 
-.slider_container--item-first {
+.item_container {
     display: flex;
-    right: 510px;
     margin-right: calc(-1020px/2);
     position: absolute;
-    top: 48%;
-    margin-top: calc(-465px/2);
     z-index: 1;
     width: 1020px;
+    height: 600px;
+    animation: 0.5s ease-in-out;
+    
 }
 
-.slider_container--item-second {
-    display: flex;
+.item_container-red {
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;
+}
+
+.item_container-blue {
+    background-color: #648BF0;
+    border-bottom: 6px solid rgb(105, 143, 238);
+}
+
+
+
+.item_container--active {
+    right: 510px;
+}
+
+.item_container--next {
     right: -510px;
-    margin-right: calc(-1020px/2);
-    position: absolute;
-    top: 48%;
-    margin-top: calc(-465px/2);
-    z-index: 1;
-    width: 1020px;
     justify-content: center;
 }
+
+.to_left {
+    animation-name: left;
+}
+
+.to_right {
+    animation-name: right;
+    animation-direction: reverse;
+}
+
+.from_left {
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+.from_right {
+    animation-name: right;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+
+
 
 
 
@@ -166,7 +212,7 @@
     width: 16px;
     position: absolute;
     z-index: 2;
-    margin-top: calc(-33.2px/2);
+    margin-top: calc(-40px/2);
 }
 
 .slider_container--arrow:hover {
@@ -183,60 +229,90 @@
     background-image: url(assets/swipe_arrow-next.svg);
 }
 
-/*SLIDE*/
-.slider_container--swiper {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
+/* Phone*/
+
+.iphone_second--slide-left,
+.iphone_second--slide-center,
+.iphone_second--slide-right {
+    position: absolute;
 }
 
-/* Phone*/
+
 
 .iphone {
     display: flex;
     flex-direction: column;
     width: 215px;
     height: 458px;
-    border-radius: 27px;
+    border-radius: 12%/6%;
     background-color: #f2f2f2;
+    box-shadow: 21px 21px 0px 4px rgba(0, 0, 0, 0.15);
 }
 
+.iphone_second--slide-left {
+    width: 140.02px;
+    height: 298px;
+    left: 252px;
+    top: 157px;
+    
+    opacity: 0.5;
+}
+
+.iphone_second--slide-center {
+    width: 229.61px;
+    height: 486.3px;
+    left: 383px;
+    top: 47px;
+    z-index: 1;
+}
+
+.iphone_second--slide-right {
+    width: 140.02px;
+    height: 298px;
+    left: 612.16px;
+    top: 157px;
+
+    opacity: 0.5;
+} 
+
 .iphone--screen {
-    width: 192.7px;
-    height: 338.5px;
+    width: 90%;
+    height: 74%;
     border: 2.4px solid #c6c6c6;
     border-radius: 3px;
-    margin: 20.9px 0px 0px 11.5px;
+    margin: 10% 0px 0px 5.4%;
     background-color: black;
 }
 
 .iphone--cam {
-    width: 9px;
-    height: 9px;
-    border-radius: 5px;
+    width: 4%;
+    height: 2%;
+    border-radius: 100%;
     border: 2.2px solid #d8d8d8;
     background-color: #eb5055;
-    margin: 16.6px 0 0 102.7px;
+    margin: 7.6% 0 0 47.9%;
 }
 
 .iphone--speaker {
-    width: 36.2px;
-    height: 5px;
-    border-radius: 3px;
+    width: 16.8%;
+    height: 1.1%;
+    border-radius: 5px;
     background-color: #acacac;
-    margin: 10.5px 0px 0px 90px;
+    margin: 4.9% 0px 0px 41.9%;
+
 }
 
 .iphone--button {
-    width: 42px;
-    height: 42px;
-    border-radius: 21px;
+    width: 19%;
+    height: 9%;
+    border-radius: 100%;
     background-color: #fafafa;
-    margin: 7px auto;
+    margin: 3% auto;
     cursor: pointer;
     background-image: url(assets/home_button.svg);
     background-position: center;
     background-repeat: no-repeat;
+
 }
 
 .iphone--button:hover {
@@ -246,12 +322,14 @@
 .slider_container--iphone-second {
     box-shadow: 21px -22px 0px 4px rgba(0, 0, 0, 0.15);
     transform: rotate(90deg);
+    margin-top: 52.5px;
 }
 
 .slider_container--iphone-first {
     box-shadow: 21px 21px 0px 4px rgba(0, 0, 0, 0.15);
     margin-right: 219.5px;
     margin-left: 112px;
+    margin-top: 53px;
 }
 
 .iphone--screen_first {
