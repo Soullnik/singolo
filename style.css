@@ -826,3 +826,9 @@
     margin: auto 1.2px;
 }
 
+a.anchor {
+    display: block;
+    position: relative;
+    top: -79px;
+    visibility: hidden;
+}
