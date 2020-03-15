@@ -4,18 +4,22 @@ let items = document.querySelectorAll('.item_container');
 
 
 function changeCurrentItem(n) {
+  console.log(currentItem)
   currentItem = (n + items.length) % items.length;
 }
 
 function hideItem(direction) {
+  console.log(currentItem)
   isEnabled = false;
   items[currentItem].classList.add(direction)
   items[currentItem].addEventListener('animationend', function() {
     this.classList.remove('item_container--active', direction);
+    this.classList.add('item_container--next');
   })
 }
 
 function showItem(direction) {
+  console.log(currentItem)
   items[currentItem].classList.add('item_container--next', direction)
   items[currentItem].addEventListener('animationend', function() {
     this.classList.remove('item_container--next', direction);
@@ -37,12 +41,14 @@ function nextItem(n) {
 }
 
 document.querySelector('.slider_container--arrow-previous').addEventListener('click', function(event) {
+  console.log(currentItem)
   if (isEnabled) {
     previousItem(currentItem)
   }
 })
 
 document.querySelector('.slider_container--arrow-next').addEventListener('click', function(event) {
+  console.log(currentItem)
   if (isEnabled) {
     nextItem(currentItem)
   }
