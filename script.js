@@ -3,49 +3,46 @@ let isEnabled = true;
 let items = document.querySelectorAll('.item_container');
 
 
-const changeCurrentItem = (n) => {
+function changeCurrentItem(n) {
   currentItem = (n + items.length) % items.length;
 }
 
-const hideItem = (direction) => {
+function hideItem(direction) {
   isEnabled = false;
   items[currentItem].classList.add(direction)
   items[currentItem].addEventListener('animationend', function() {
     this.classList.remove('item_container--active', direction);
-    this.classList.add('item_container--next', direction)
   })
 }
 
-const showItem = (direction) => {
+function showItem(direction) {
   items[currentItem].classList.add('item_container--next', direction)
   items[currentItem].addEventListener('animationend', function() {
     this.classList.remove('item_container--next', direction);
-    this.classList.add('item_container--active', direction);
+    this.classList.add('item_container--active');
     isEnabled = true;
   })
 }
 
-const previousItem = (n) => {
+function previousItem(n) {
   hideItem('to_right')
   changeCurrentItem(n - 1)
   showItem('from_left')
 }
 
-const nextItem = (n) => {
+function nextItem(n) {
   hideItem('to_left')
   changeCurrentItem(n + 1)
   showItem('from_right')
 }
 
 document.querySelector('.slider_container--arrow-previous').addEventListener('click', function(event) {
-  console.log(event.target)
   if (isEnabled) {
     previousItem(currentItem)
   }
 })
 
 document.querySelector('.slider_container--arrow-next').addEventListener('click', function(event) {
-  console.log(event.target)
   if (isEnabled) {
     nextItem(currentItem)
   }
