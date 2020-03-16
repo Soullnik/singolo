@@ -1,6 +1,9 @@
 let currentItem = 0;
 let isEnabled = true;
 let items = document.querySelectorAll('.item_container');
+let next = document.querySelector('.slider_container--arrow-next');
+let previous = document.querySelector('.slider_container--arrow-previous');
+let portfolioImg = document.querySelectorAll('.img');
 
 
 function changeCurrentItem(n) {
@@ -40,20 +43,6 @@ function nextItem(n) {
   showItem('from_right')
 }
 
-document.querySelector('.slider_container--arrow-previous').addEventListener('click', function(event) {
-  console.log(currentItem)
-  if (isEnabled) {
-    previousItem(currentItem)
-  }
-})
-
-document.querySelector('.slider_container--arrow-next').addEventListener('click', function(event) {
-  console.log(currentItem)
-  if (isEnabled) {
-    nextItem(currentItem)
-  }
-}) 
-
 const menuScroll = (event) => {
   if(event.target.tagName === 'A')
   event.preventDefault();
@@ -82,13 +71,57 @@ const screenActive = (event) => {
     (changeClass.contains('iphone--screen_first')) ? changeClass.remove('iphone--screen_first') : changeClass.add('iphone--screen_first');
     }
   }
-};
+}
+
+function tabActive(event) {
+  if (!event.target.classList.contains('portfolio_container--tag-selected')) {
+    let arrImg = []
+    portfolioImg.forEach(el => arrImg.push(el.src))
+    if (event.target.tagName === 'SPAN') {
+      tab.querySelectorAll('.portfolio_container--tag').forEach(el => el.classList.remove('portfolio_container--tag-selected'))
+      event.target.classList.add('portfolio_container--tag-selected')
+      if (event.target.classList.contains('portfolio_container--tag-selected')) {
+        arrImg.sort(function() {
+          return Math.random() - 0.5
+        })
+        arrImg.forEach(function(elem, index) {
+        portfolioImg[index].src = elem;
+        })
+        portfolioImg.forEach(el => el.classList.remove('img_active'))
+      }
+    }
+  }
+}
+
+
+function highlightImg(event) {
+  if(event.target.classList.contains('img')) {
+    portfolioImg.forEach(el => el.classList.remove('img_active'))
+    event.target.classList.add('img_active')
+    // portfolioImg.forEach(el => el.style.border = '5px solid #F06C64')
+  }
+}
 
 const init = () => {
   menu.addEventListener('click', menuScroll)
   items.forEach((elem) => {
     elem.addEventListener('click', screenActive)
   })
+  previous.addEventListener('click', function(event) {
+    console.log(currentItem)
+    if (isEnabled) {
+      previousItem(currentItem)
+    }
+  })
+  next.addEventListener('click', function(event) {
+    console.log(currentItem)
+    if (isEnabled) {
+      nextItem(currentItem)
+    }
+  }) 
+  tab.addEventListener('click', tabActive)
+
+  imgBlock.addEventListener('click', highlightImg)
 }
 
 init();

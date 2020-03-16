@@ -500,6 +500,11 @@
     display:none;
 }
 
+
+.img_active {
+    border: 5px solid #F06C64;
+    height: 187px;
+}
 /*About-us*/
 
 .about_us_container {
