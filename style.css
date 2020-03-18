@@ -500,6 +500,11 @@
     display:none;
 }
 
+.img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
 
 .img_active {
     border: 5px solid #F06C64;

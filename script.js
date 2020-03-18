@@ -1,9 +1,11 @@
 let currentItem = 0;
 let isEnabled = true;
+let windowEnabled = true;
 let items = document.querySelectorAll('.item_container');
 let next = document.querySelector('.slider_container--arrow-next');
 let previous = document.querySelector('.slider_container--arrow-previous');
 let portfolioImg = document.querySelectorAll('.img');
+
 
 
 function changeCurrentItem(n) {
@@ -43,19 +45,22 @@ function nextItem(n) {
   showItem('from_right')
 }
 
-const menuScroll = (event) => {
-  if(event.target.tagName === 'A')
-  event.preventDefault();
-  menu.querySelectorAll('a').forEach(el => el.classList.remove('header_container--link-active'));
-  event.target.classList.add('header_container--link-active');
-  const blockID = event.target.getAttribute('href').substr(1);
-  document.getElementById(blockID).scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+const menuScrollHandler = (event) => {
+  if(event.target.tagName === 'A') {
+    // windowEnabled = false
+    event.preventDefault();
+    menu.querySelectorAll('a').forEach(el => el.classList.remove('header_container--link-active'));
+    event.target.classList.add('header_container--link-active');
+    const blockID = event.target.getAttribute('href').substr(1);
+    console.log(blockID)
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
 }
 
-const screenActive = (event) => {
+const screenActiveHandler = (event) => {
   console.log(event.target.parentElement.classList)
   if (event.target.classList.contains('iphone--button')) {
     const phoneScreen = event.target.parentElement.querySelector('.iphone--screen');
@@ -73,7 +78,7 @@ const screenActive = (event) => {
   }
 }
 
-function tabActive(event) {
+function tabActiveHandler(event) {
   if (!event.target.classList.contains('portfolio_container--tag-selected')) {
     let arrImg = []
     portfolioImg.forEach(el => arrImg.push(el.src))
@@ -94,41 +99,70 @@ function tabActive(event) {
 }
 
 
-function highlightImg(event) {
-  if(event.target.classList.contains('img')) {
+function highlightImgHeandler(event) {
+  if(event.target.classList.contains('img') && event.target.classList.contains('img_active') === false) {
     portfolioImg.forEach(el => el.classList.remove('img_active'))
     event.target.classList.add('img_active')
-    // portfolioImg.forEach(el => el.style.border = '5px solid #F06C64')
+  } else {
+    event.target.classList.remove('img_active')
   }
 }
 
-const init = () => {
-  menu.addEventListener('click', menuScroll)
-  items.forEach((elem) => {
-    elem.addEventListener('click', screenActive)
-  })
-  previous.addEventListener('click', function(event) {
-    console.log(currentItem)
-    if (isEnabled) {
-      previousItem(currentItem)
-    }
-  })
-  next.addEventListener('click', function(event) {
-    console.log(currentItem)
-    if (isEnabled) {
-      nextItem(currentItem)
-    }
-  }) 
-  tab.addEventListener('click', tabActive)
+function scrollWindowHeandler() {
+  const header = 40
+  const servicesPosition = document.getElementById('yakServicesContainer').offsetTop - header
+  const portfolioPosition = document.getElementById('yakPortfolioContainer').offsetTop - header
+  const aboutPosition = document.getElementById('yakAboutUsContainer').offsetTop - header
+  const contactPosition = document.getElementById('yakContactContainer').offsetTop - header
 
-  imgBlock.addEventListener('click', highlightImg)
+  const currentPosition = window.pageYOffset
+    if (currentPosition < servicesPosition) changeActiveNav(0)
+    else if (currentPosition >= servicesPosition && currentPosition < portfolioPosition) changeActiveNav(1)
+    else if (currentPosition >= portfolioPosition && currentPosition < aboutPosition) changeActiveNav(2)
+    else if (currentPosition >= aboutPosition && currentPosition < contactPosition && !isPageEnd()) changeActiveNav(3)
+    if (isPageEnd() || currentPosition >= contactPosition) changeActiveNav(4)
+}
+
+function isPageEnd() {
+  return window.pageYOffset >= document.documentElement.offsetHeight - innerHeight
+}
+
+function changeActiveNav(i) {
+  const navLinks = menu.querySelectorAll('a')
+  navLinks.forEach(el => {
+    el.classList.remove('header_container--link-active')
+  })
+  navLinks[i].classList.add('header_container--link-active')
+}
+
+
+
+
+const init = () => {
+  menu.addEventListener('click', menuScrollHandler)
+  
+  items.forEach((elem) => {
+    elem.addEventListener('click', screenActiveHandler)
+  })
+
+  previous.addEventListener('click', function(event) {
+    if (isEnabled) previousItem(currentItem)
+  })
+
+  next.addEventListener('click', function(event) {
+    if (isEnabled) nextItem(currentItem)
+  }) 
+
+  tab.addEventListener('click', tabActiveHandler)
+
+  imgBlock.addEventListener('click', highlightImgHeandler)
+
+  window.addEventListener('scroll', scrollWindowHeandler)
+
 }
 
 init();
 
-
-
-  
 
 
 
