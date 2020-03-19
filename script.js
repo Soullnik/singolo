@@ -5,8 +5,20 @@ let items = document.querySelectorAll('.item_container');
 let next = document.querySelector('.slider_container--arrow-next');
 let previous = document.querySelector('.slider_container--arrow-previous');
 let portfolioImg = document.querySelectorAll('.img');
-
-
+let SubmitBtn = document.querySelector('.submit');
+let form = document.querySelector('.layout_two_column--form');
+let formName = document.querySelector('.layout_two_column--form_name');
+let formEmail = document.querySelector('.layout_two_column--form_email');
+let formSubject = document.querySelector('.layout_two_column--form_subject');
+let formDescription = document.querySelector('.layout_two_column--form_description');
+let contuct_us = document.querySelector('.contact_us');
+let overlay = createDomNode('overlay', 'div', 'overlay');
+let modal = createDomNode('modal', 'div', 'modal');
+let message = createDomNode('message', 'div', 'message');
+let messageStatus = createDomNode('messageStatus', 'p', 'message--status');
+let messageSubject = createDomNode('messageSubject', 'p', 'message--subject');
+let messageDescription = createDomNode('messageDescription', 'p', 'message--description');
+let messageBtn = createDomNode('messageBtn', 'button', 'message--agree-hidden');
 
 function changeCurrentItem(n) {
   console.log(currentItem)
@@ -47,7 +59,7 @@ function nextItem(n) {
 
 const menuScrollHandler = (event) => {
   if(event.target.tagName === 'A') {
-    // windowEnabled = false
+    // window.removeEventListener('scroll', scrollWindowHeandler)
     event.preventDefault();
     menu.querySelectorAll('a').forEach(el => el.classList.remove('header_container--link-active'));
     event.target.classList.add('header_container--link-active');
@@ -55,8 +67,14 @@ const menuScrollHandler = (event) => {
     console.log(blockID)
     document.getElementById(blockID).scrollIntoView({
       behavior: 'smooth',
-      block: 'start'
+      block: 'start',
     });
+    // setTimeout(
+    //   () => {
+    //     window.addEventListener('scroll', scrollWindowHeandler)
+    //   },
+    //    1500
+    // );
   }
 }
 
@@ -76,7 +94,7 @@ const screenActiveHandler = (event) => {
     (changeClass.contains('iphone--screen_first')) ? changeClass.remove('iphone--screen_first') : changeClass.add('iphone--screen_first');
     }
   }
-}
+} 
 
 function tabActiveHandler(event) {
   if (!event.target.classList.contains('portfolio_container--tag-selected')) {
@@ -98,7 +116,6 @@ function tabActiveHandler(event) {
   }
 }
 
-
 function highlightImgHeandler(event) {
   if(event.target.classList.contains('img') && event.target.classList.contains('img_active') === false) {
     portfolioImg.forEach(el => el.classList.remove('img_active'))
@@ -109,6 +126,7 @@ function highlightImgHeandler(event) {
 }
 
 function scrollWindowHeandler() {
+
   const header = 40
   const servicesPosition = document.getElementById('yakServicesContainer').offsetTop - header
   const portfolioPosition = document.getElementById('yakPortfolioContainer').offsetTop - header
@@ -116,10 +134,15 @@ function scrollWindowHeandler() {
   const contactPosition = document.getElementById('yakContactContainer').offsetTop - header
 
   const currentPosition = window.pageYOffset
-    if (currentPosition < servicesPosition) changeActiveNav(0)
-    else if (currentPosition >= servicesPosition && currentPosition < portfolioPosition) changeActiveNav(1)
-    else if (currentPosition >= portfolioPosition && currentPosition < aboutPosition) changeActiveNav(2)
-    else if (currentPosition >= aboutPosition && currentPosition < contactPosition && !isPageEnd()) changeActiveNav(3)
+    if (currentPosition < servicesPosition) {
+      changeActiveNav(0);
+    }else if (currentPosition >= servicesPosition && currentPosition < portfolioPosition) {
+      changeActiveNav(1);
+    }else if (currentPosition >= portfolioPosition && currentPosition < aboutPosition) {
+      changeActiveNav(2);
+    }else if (currentPosition >= aboutPosition && currentPosition < contactPosition && !isPageEnd()) {
+      changeActiveNav(3);
+    }
     if (isPageEnd() || currentPosition >= contactPosition) changeActiveNav(4)
 }
 
@@ -135,8 +158,66 @@ function changeActiveNav(i) {
   navLinks[i].classList.add('header_container--link-active')
 }
 
+function createDomNode(node, element, ...classes) {
+  node = document.createElement(element);
+  node.classList.add(...classes);
+  return node;
+}
 
+function setContent(content, element) {
+  if (element == messageSubject) {
+    if(content !== '') {
+      element.innerText = 'Тема: ' + content;
+    }else {
+      element.innerText = 'Без темы';
+    };
+  }
 
+  if (element == messageDescription) {
+    if(content !== '') {
+      element.innerText = 'Описание: ' + content;
+    }else {
+      element.innerText = 'Без описания';
+    };
+  }
+
+  if(element == messageStatus) {
+    element.innerText += content;
+  }else if(element == messageBtn) {
+    element.innerText += content;
+  }
+}
+
+function appendModalElements() {
+  yakContact.append(modal);
+  modal.append(message);
+  message.append(messageStatus);
+  message.append(messageSubject);
+  message.append(messageDescription);
+  message.append(messageBtn);
+  setContent('Письмо отправлено', messageStatus)
+  setContent('Продолжить', messageBtn)
+}
+
+function BtnHeandler(event) {
+  let validateName = formName.validity.valid;
+  let validateEmail = formEmail.validity.valid;
+
+  if(validateName == true && validateEmail == true) {
+    setContent(formSubject.value, messageSubject)
+    setContent(formDescription.value, messageDescription)
+    event.preventDefault();
+    document.body.prepend(overlay);
+    document.body.classList.add('scroll-hidden');
+    appendModalElements();
+    document.querySelector('.message--agree-hidden').addEventListener('click', function(event) {
+      overlay.remove();
+      document.body.classList.remove('scroll-hidden');
+      modal.remove();
+      form.reset();
+    })
+  }
+}
 
 const init = () => {
   menu.addEventListener('click', menuScrollHandler)
@@ -157,12 +238,9 @@ const init = () => {
 
   imgBlock.addEventListener('click', highlightImgHeandler)
 
-  window.addEventListener('scroll', scrollWindowHeandler)
+  window.addEventListener('wheel', scrollWindowHeandler)
 
+  SubmitBtn.addEventListener('click', BtnHeandler)
 }
 
 init();
-
-
-
-

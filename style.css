@@ -52,7 +52,7 @@
 .header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 3;
 }
 
 .header_container {
@@ -646,21 +646,25 @@
     width: 66%;
 }
 
-.layout_two_column--form > input {
+.layout_two_column--form_name,
+.layout_two_column--form_email,
+.layout_two_column--form_subject {
     height: 38.9px;
     border: 0px;
     border-radius: 5px;
     background-color: #d6564f;
     padding: 14px;
+    color: #f0d8d9;
 }
 
-.layout_two_column--form > textarea {
+.layout_two_column--form_description {
     border-radius: 5px;
     border: 0px;
     background-color: #d6564f;
     padding: 14px;
     resize: none;
     height: 203px;
+    color: #f0d8d9;
 }
 
 .layout_two_column--form > input::placeholder, textarea::placeholder {
@@ -834,6 +838,85 @@ a.anchor {
     to {
         left: 0;
     }
+}
+
+/* MODAL */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(80, 80, 80, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+
+.modal {
+    border-radius: 10px;
+    background-color: #2d303a;
+    overflow: auto;
+    z-index: 5;
+    position: fixed;
+    top: 35%;
+    left: 30%;
+    right: 30%;
+    bottom: 35%;
+    padding: 5px 15px;
+    box-shadow: 0 0 10px black;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    justify-content: space-around;
+    font-family: "Lato Regular", sans-serif;
+    color: #767e9e;
+}
+
+.message--status {
+    text-align: center;
+}
+
+.message--subject {
+    width: 100%;
+    height: 7%;
+    overflow: hidden;
+}
+.message--description {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+}
+
+.button-agree {
+    margin: 0 auto;
+}
+
+.message--agree-hidden {
+    background-color: #f0d8d9;
+    border-radius: 5px;
+    border: 0px;
+    margin: 0 auto;
+    font-family: "Lato black", sans-serif;
+    color: #767e9e;
+}
+
+.message--agree-hidden:hover {
+    cursor: pointer;
+    background-color: #d6564f;
+    color: #f0d8d9;
+    transition: 0.5s;
+}
+
+.scroll-hidden {
+    overflow: hidden;
 }
 
 
