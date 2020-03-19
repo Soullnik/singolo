@@ -1,34 +1,34 @@
+const items = document.querySelectorAll('.item_container');
+const next = document.querySelector('.slider_container--arrow-next');
+const previous = document.querySelector('.slider_container--arrow-previous');
+const portfolioImg = document.querySelectorAll('.img');
+const SubmitBtn = document.querySelector('.submit');
+const form = document.querySelector('.layout_two_column--form');
+const formName = document.querySelector('.layout_two_column--form_name');
+const formEmail = document.querySelector('.layout_two_column--form_email');
+const formSubject = document.querySelector('.layout_two_column--form_subject');
+const formDescription = document.querySelector('.layout_two_column--form_description');
+const contuct_us = document.querySelector('.contact_us');
+const overlay = createDomNode('overlay', 'div', 'overlay');
+const modal = createDomNode('modal', 'div', 'modal');
+const message = createDomNode('message', 'div', 'message');
+const messageStatus = createDomNode('messageStatus', 'p', 'message--status');
+const messageSubject = createDomNode('messageSubject', 'p', 'message--subject');
+const messageDescription = createDomNode('messageDescription', 'p', 'message--description');
+const messageBtn = createDomNode('messageBtn', 'button', 'message--agree-hidden');
+
 let currentItem = 0;
 let isEnabled = true;
 let windowEnabled = true;
-let items = document.querySelectorAll('.item_container');
-let next = document.querySelector('.slider_container--arrow-next');
-let previous = document.querySelector('.slider_container--arrow-previous');
-let portfolioImg = document.querySelectorAll('.img');
-let SubmitBtn = document.querySelector('.submit');
-let form = document.querySelector('.layout_two_column--form');
-let formName = document.querySelector('.layout_two_column--form_name');
-let formEmail = document.querySelector('.layout_two_column--form_email');
-let formSubject = document.querySelector('.layout_two_column--form_subject');
-let formDescription = document.querySelector('.layout_two_column--form_description');
-let contuct_us = document.querySelector('.contact_us');
-let overlay = createDomNode('overlay', 'div', 'overlay');
-let modal = createDomNode('modal', 'div', 'modal');
-let message = createDomNode('message', 'div', 'message');
-let messageStatus = createDomNode('messageStatus', 'p', 'message--status');
-let messageSubject = createDomNode('messageSubject', 'p', 'message--subject');
-let messageDescription = createDomNode('messageDescription', 'p', 'message--description');
-let messageBtn = createDomNode('messageBtn', 'button', 'message--agree-hidden');
+
 
 function changeCurrentItem(n) {
-  console.log(currentItem)
   currentItem = (n + items.length) % items.length;
 }
 
 function hideItem(direction) {
-  console.log(currentItem)
   isEnabled = false;
-  items[currentItem].classList.add(direction)
+  items[currentItem].classList.add(direction);
   items[currentItem].addEventListener('animationend', function() {
     this.classList.remove('item_container--active', direction);
     this.classList.add('item_container--next');
@@ -36,7 +36,6 @@ function hideItem(direction) {
 }
 
 function showItem(direction) {
-  console.log(currentItem)
   items[currentItem].classList.add('item_container--next', direction)
   items[currentItem].addEventListener('animationend', function() {
     this.classList.remove('item_container--next', direction);
@@ -46,15 +45,15 @@ function showItem(direction) {
 }
 
 function previousItem(n) {
-  hideItem('to_right')
-  changeCurrentItem(n - 1)
-  showItem('from_left')
+  hideItem('to_right');
+  changeCurrentItem(n - 1);
+  showItem('from_left');
 }
 
 function nextItem(n) {
-  hideItem('to_left')
-  changeCurrentItem(n + 1)
-  showItem('from_right')
+  hideItem('to_left');
+  changeCurrentItem(n + 1);
+  showItem('from_right');
 }
 
 const menuScrollHandler = (event) => {
