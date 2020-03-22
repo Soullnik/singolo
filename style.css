@@ -288,6 +288,9 @@ html {
     border-radius: 3px;
     margin: 10% 0px 0px 5.4%;
     background-color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .iphone--cam {
@@ -339,13 +342,11 @@ html {
 }
 
 .iphone--screen_first {
-    background-image: url(assets/Layerfirst.png);
-    background-position: -14.1px -134px;
+    background-image: url(assets/phone-vertical-display-one.svg);
 }
 
 .iphone--screen_second {
-    background-image: url(assets/Layersecond.png);
-    background-position: -118.8px -121.2px
+    background-image: url(assets/phone-horizontal-display.svg);
 }
 
 /*services*/
