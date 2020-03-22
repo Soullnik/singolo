@@ -1,4 +1,4 @@
-const items = document.querySelectorAll('.item_container');
+const items = document.querySelectorAll('.item');
 const next = document.querySelector('.slider_container--arrow-next');
 const previous = document.querySelector('.slider_container--arrow-previous');
 const portfolioImg = document.querySelectorAll('.img');
@@ -30,16 +30,16 @@ function hideItem(direction) {
   isEnabled = false;
   items[currentItem].classList.add(direction);
   items[currentItem].addEventListener('animationend', function() {
-    this.classList.remove('item_container--active', direction);
+    this.classList.remove('item--active', direction);
     this.classList.add('item_container--next');
   })
 }
 
 function showItem(direction) {
-  items[currentItem].classList.add('item_container--next', direction)
+  items[currentItem].classList.add('item--next', direction)
   items[currentItem].addEventListener('animationend', function() {
-    this.classList.remove('item_container--next', direction);
-    this.classList.add('item_container--active');
+    this.classList.remove('item--next', direction);
+    this.classList.add('item--active');
     isEnabled = true;
   })
 }
