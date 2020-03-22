@@ -421,6 +421,10 @@ html {
     transition: all .1s linear;
 }
 
+.portfolio_container--tag:last-child {
+    margin-right: 0;
+}
+
 
 .portfolio_container--tag-selected {
     color: #dedede;
