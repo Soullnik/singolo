@@ -859,10 +859,10 @@ a.anchor {
     overflow: auto;
     z-index: 5;
     position: fixed;
-    top: 35%;
-    left: 30%;
-    right: 30%;
-    bottom: 35%;
+    top: 30%;
+    left: 25%;
+    right: 25%;
+    bottom: 30%;
     padding: 5px 15px;
     box-shadow: 0 0 10px black;
 }
@@ -883,12 +883,12 @@ a.anchor {
 }
 
 .message--subject {
-    width: 100%;
+    width: 95%;
     height: 7%;
     overflow: hidden;
 }
 .message--description {
-    width: 100%;
+    width: 95%;
     height: 60%;
     overflow: hidden;
 }
