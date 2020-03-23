@@ -224,41 +224,45 @@ function btnHeandler(event) {
 
 const closeBurger = () => {
   event.target.classList.add('to_close_burger')
-    headerBox.classList.add('to_close')
-    event.target.addEventListener('animationend', function() {
-      event.target.classList.remove('to_close_burger')
-      event.target.classList.remove('burger-open')
-    })
+  headerBox.classList.add('to_close')
+  event.target.addEventListener('animationend', function() {
+    event.target.classList.remove('to_close_burger')
+    event.target.classList.remove('burger-open')
+  })
 
-    headerBox.addEventListener('animationend', function() {
-      headerBox.classList.remove('to_close')
-      headerBox.classList.remove('header_container--open')
-    })
-    overlay.remove();
-    document.body.classList.remove('scroll-hidden');
-    isEnabledBurger = true;
+  headerBox.addEventListener('animationend', function() {
+    headerBox.classList.remove('to_close')
+    headerBox.classList.remove('header_container--open')
+  })
+  overlay.remove();
+  document.body.classList.remove('scroll-hidden');
+}
+
+const openBurger = () => {
+  event.target.classList.add('to_open_burger')
+  event.target.classList.add('burger-open')
+  headerBox.classList.add('to_open')
+  headerBox.classList.add('header_container--open')
+
+  event.target.addEventListener('animationend', function() {
+    event.target.classList.remove('to_open_burger')
+  })
+
+  headerBox.addEventListener('animationend', function() {
+    headerBox.classList.remove('to_open')
+  })
+  
+  document.body.prepend(overlay);
+  document.body.classList.add('scroll-hidden');
 }
 
 function burgerHeandler(event) {
   if (isEnabledBurger === true) {
-    event.target.classList.add('to_open_burger')
-    event.target.classList.add('burger-open')
-    headerBox.classList.add('to_open')
-    headerBox.classList.add('header_container--open')
-
-    event.target.addEventListener('animationend', function() {
-      event.target.classList.remove('to_open_burger')
-    })
-
-    headerBox.addEventListener('animationend', function() {
-      headerBox.classList.remove('to_open')
-    })
-    
-    document.body.prepend(overlay);
-    document.body.classList.add('scroll-hidden');
+    openBurger();
     isEnabledBurger = false;
   }else {
     closeBurger();
+    isEnabledBurger = true;;
   }
 }
 
