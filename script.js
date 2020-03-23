@@ -16,9 +16,12 @@ const messageStatus = createDomNode('messageStatus', 'p', 'message--status');
 const messageSubject = createDomNode('messageSubject', 'p', 'message--subject');
 const messageDescription = createDomNode('messageDescription', 'p', 'message--description');
 const messageBtn = createDomNode('messageBtn', 'button', 'message--agree-hidden');
+const burgerBtn = document.querySelector('.burger');
+const headerBox = document.querySelector('.header_container');
 
 let currentItem = 0;
 let isEnabled = true;
+let isEnabledBurger = true;
 let windowEnabled = true;
 
 
@@ -60,6 +63,7 @@ const menuScrollHandler = (event) => {
   if(event.target.tagName === 'A') {
     // window.removeEventListener('scroll', scrollWindowHeandler)
     event.preventDefault();
+    closeBurger();
     menu.querySelectorAll('a').forEach(el => el.classList.remove('header_container--link-active'));
     event.target.classList.add('header_container--link-active');
     const blockID = event.target.getAttribute('href').substr(1);
@@ -198,7 +202,7 @@ function appendModalElements() {
   setContent('Продолжить', messageBtn)
 }
 
-function BtnHeandler(event) {
+function btnHeandler(event) {
   let validateName = formName.validity.valid;
   let validateEmail = formEmail.validity.valid;
 
@@ -215,6 +219,46 @@ function BtnHeandler(event) {
       modal.remove();
       form.reset();
     })
+  }
+}
+
+const closeBurger = () => {
+  event.target.classList.add('to_close_burger')
+    headerBox.classList.add('to_close')
+    event.target.addEventListener('animationend', function() {
+      event.target.classList.remove('to_close_burger')
+      event.target.classList.remove('burger-open')
+    })
+
+    headerBox.addEventListener('animationend', function() {
+      headerBox.classList.remove('to_close')
+      headerBox.classList.remove('header_container--open')
+    })
+    overlay.remove();
+    document.body.classList.remove('scroll-hidden');
+    isEnabledBurger = true;
+}
+
+function burgerHeandler(event) {
+  if (isEnabledBurger === true) {
+    event.target.classList.add('to_open_burger')
+    event.target.classList.add('burger-open')
+    headerBox.classList.add('to_open')
+    headerBox.classList.add('header_container--open')
+
+    event.target.addEventListener('animationend', function() {
+      event.target.classList.remove('to_open_burger')
+    })
+
+    headerBox.addEventListener('animationend', function() {
+      headerBox.classList.remove('to_open')
+    })
+    
+    document.body.prepend(overlay);
+    document.body.classList.add('scroll-hidden');
+    isEnabledBurger = false;
+  }else {
+    closeBurger();
   }
 }
 
@@ -239,7 +283,11 @@ const init = () => {
 
   window.addEventListener('wheel', scrollWindowHeandler)
 
-  SubmitBtn.addEventListener('click', BtnHeandler)
+  SubmitBtn.addEventListener('click', btnHeandler)
+
+  burgerBtn.addEventListener('click', burgerHeandler)
+
+
 }
 
 init();
