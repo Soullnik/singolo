@@ -828,7 +828,7 @@ html {
 a.anchor {
     display: block;
     position: relative;
-    top: -79px;
+    bottom: 79px;
     visibility: hidden;
 }
 
@@ -993,6 +993,10 @@ a.anchor {
 
     .layout_two_column--contact {
         width: 100%;
+    }
+
+    a.anchor {
+        bottom: 375px;
     }
 
 

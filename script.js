@@ -61,23 +61,13 @@ function nextItem(n) {
 
 const menuScrollHandler = (event) => {
   if(event.target.tagName === 'A') {
-    // window.removeEventListener('scroll', scrollWindowHeandler)
     event.preventDefault();
     closeBurger();
-    menu.querySelectorAll('a').forEach(el => el.classList.remove('header_container--link-active'));
-    event.target.classList.add('header_container--link-active');
     const blockID = event.target.getAttribute('href').substr(1);
-    console.log(blockID)
     document.getElementById(blockID).scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
-    // setTimeout(
-    //   () => {
-    //     window.addEventListener('scroll', scrollWindowHeandler)
-    //   },
-    //    1500
-    // );
   }
 }
 
@@ -129,7 +119,6 @@ function highlightImgHeandler(event) {
 }
 
 function scrollWindowHeandler() {
-
   const header = 40
   const servicesPosition = document.getElementById('yakServicesContainer').offsetTop - header
   const portfolioPosition = document.getElementById('yakPortfolioContainer').offsetTop - header
@@ -137,7 +126,7 @@ function scrollWindowHeandler() {
   const contactPosition = document.getElementById('yakContactContainer').offsetTop - header
 
   const currentPosition = window.pageYOffset
-    if (currentPosition < servicesPosition) {
+    if (window.pageYOffset === 0) {
       changeActiveNav(0);
     }else if (currentPosition >= servicesPosition && currentPosition < portfolioPosition) {
       changeActiveNav(1);
@@ -262,6 +251,7 @@ const openBurger = () => {
 function burgerHeandler(event) {
   if (isEnabledBurger === true) {
     openBurger();
+    
   }else {
     closeBurger();
   }
@@ -286,7 +276,7 @@ const init = () => {
 
   imgBlock.addEventListener('click', highlightImgHeandler)
 
-  window.addEventListener('wheel', scrollWindowHeandler)
+  window.addEventListener('scroll', scrollWindowHeandler)
 
   SubmitBtn.addEventListener('click', btnHeandler)
 
