@@ -225,6 +225,7 @@ function btnHeandler(event) {
 const closeBurger = () => {
   event.target.classList.add('to_close_burger')
   headerBox.classList.add('to_close')
+  
   event.target.addEventListener('animationend', function() {
     event.target.classList.remove('to_close_burger')
     event.target.classList.remove('burger-open')
@@ -236,6 +237,7 @@ const closeBurger = () => {
   })
   overlay.remove();
   document.body.classList.remove('scroll-hidden');
+  isEnabledBurger = true;
 }
 
 const openBurger = () => {
@@ -254,15 +256,14 @@ const openBurger = () => {
   
   document.body.prepend(overlay);
   document.body.classList.add('scroll-hidden');
+  isEnabledBurger = false;
 }
 
 function burgerHeandler(event) {
   if (isEnabledBurger === true) {
     openBurger();
-    isEnabledBurger = false;
   }else {
     closeBurger();
-    isEnabledBurger = true;;
   }
 }
 
