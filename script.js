@@ -240,15 +240,15 @@ const closeBurger = () => {
 
 const openBurger = () => {
   event.target.classList.add('to_open_burger')
-  event.target.classList.add('burger-open')
   headerBox.classList.add('to_open')
-  headerBox.classList.add('header_container--open')
 
   event.target.addEventListener('animationend', function() {
+    event.target.classList.add('burger-open')
     event.target.classList.remove('to_open_burger')
   })
 
   headerBox.addEventListener('animationend', function() {
+    headerBox.classList.add('header_container--open')
     headerBox.classList.remove('to_open')
   })
   
