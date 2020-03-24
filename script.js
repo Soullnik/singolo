@@ -1,4 +1,5 @@
 const items = document.querySelectorAll('.item');
+const dots = document.querySelectorAll('.slider_dots--item');
 const next = document.querySelector('.slider_container--arrow-next');
 const previous = document.querySelector('.slider_container--arrow-previous');
 const portfolioImg = document.querySelectorAll('.img');
@@ -25,6 +26,12 @@ let isEnabled = true;
 let isEnabledBurger = true;
 let windowEnabled = true;
 
+function changeDotsItem(Item) {
+  dots.forEach(el => {
+    el.classList.remove('slider_dots--item-curent')
+  })
+  dots[Item].classList.add('slider_dots--item-curent');
+}
 
 function changeCurrentItem(n) {
   currentItem = (n + items.length) % items.length;
@@ -32,6 +39,7 @@ function changeCurrentItem(n) {
 
 function hideItem(direction) {
   isEnabled = false;
+  changeDotsItem(currentItem)
   items[currentItem].classList.add(direction);
   items[currentItem].addEventListener('animationend', function() {
     this.classList.remove('item--active', direction);
@@ -40,6 +48,7 @@ function hideItem(direction) {
 }
 
 function showItem(direction) {
+  changeDotsItem(currentItem)
   items[currentItem].classList.add('item--next', direction)
   items[currentItem].addEventListener('animationend', function() {
     this.classList.remove('item--next', direction);
@@ -73,20 +82,19 @@ const menuScrollHandler = (event) => {
 }
 
 const screenActiveHandler = (event) => {
-  console.log(event.target.parentElement.classList)
-  if (event.target.classList.contains('iphone--button')) {
-    const phoneScreen = event.target.parentElement.querySelector('.iphone--screen');
-    const first = event.target.parentElement.classList.contains('slider_container--iphone-first');
-    const second = event.target.parentElement.classList.contains('slider_container--iphone-second');
-    const third = event.target.parentElement.classList.contains('iphone_second');
-    const changeClass = phoneScreen.classList;
-    if (first) {
-    (changeClass.contains('iphone--screen_first')) ? changeClass.remove('iphone--screen_first') : changeClass.add('iphone--screen_first');
-    } else if (second) {
-    (changeClass.contains('iphone--screen_second')) ? changeClass.remove('iphone--screen_second') : changeClass.add('iphone--screen_second');
-    } else if (third) {
-    (changeClass.contains('iphone--screen_third')) ? changeClass.remove('iphone--screen_third') : changeClass.add('iphone--screen_third');
-    }
+  const phoneScreen = event.target.parentElement.querySelector('.iphone--screen');
+  const first = event.target.parentElement.classList.contains('slider_container--iphone-first');
+  const backgroundPhoneLeft = event.target.parentElement.classList.contains('iphone_second--left');
+  const backgroundPhoneRight = event.target.parentElement.classList.contains('iphone_second--right');
+  const second = event.target.parentElement.classList.contains('slider_container--iphone-second');
+  const third = event.target.parentElement.classList.contains('iphone_second');
+  const changeClass = phoneScreen.classList;
+  if (first || backgroundPhoneLeft || backgroundPhoneRight) {
+  (changeClass.contains('iphone--screen_first')) ? changeClass.remove('iphone--screen_first') : changeClass.add('iphone--screen_first');
+  } else if (second) {
+  (changeClass.contains('iphone--screen_second')) ? changeClass.remove('iphone--screen_second') : changeClass.add('iphone--screen_second');
+  } else if (third) {
+  (changeClass.contains('iphone--screen_third')) ? changeClass.remove('iphone--screen_third') : changeClass.add('iphone--screen_third');
   }
 } 
 
@@ -197,6 +205,7 @@ function btnHeandler(event) {
   let validateEmail = formEmail.validity.valid;
 
   if(validateName == true && validateEmail == true) {
+    modalChild = [modal, message, messageStatus, messageSubject, messageDescription, messageBtn]
     setContent(formSubject.value, messageSubject)
     setContent(formDescription.value, messageDescription)
     event.preventDefault();
@@ -204,6 +213,9 @@ function btnHeandler(event) {
     document.body.classList.add('scroll-hidden');
     appendModalElements();
     document.querySelector('.message--agree-hidden').addEventListener('click', function(event) {
+      modalChild.forEach(item => {
+        item.innerText = '';
+      })
       overlay.remove();
       document.body.classList.remove('scroll-hidden');
       modal.remove();
@@ -258,10 +270,7 @@ function burgerHeandler(event) {
   }
 }
 
-
 const swipeDetected = (el) => {
-  console.log('sfsdf')
-
   let surface = el;
   let startX = 0;
   let startY = 0;
@@ -305,6 +314,22 @@ const swipeDetected = (el) => {
   })
 
   surface.addEventListener('touchstart', function(e) {
+    if (e.target.classList.contains('slider_container--arrow')) {
+      if (e.target.classList.contains('slider_container--arrow-previous')) {
+        if (isEnabled) {
+          previousItem(currentItem);
+        }
+      } else if (e.target.classList.contains('slider_container--arrow-next')) {
+        if (isEnabled) {
+          nextItem(currentItem);
+        }
+      }
+    }
+
+    if (e.target.classList.contains('iphone--button')) {
+      screenActiveHandler(e)
+    }
+
     let touchObj = e.changedTouches[0]; 
     startX = touchObj.pageX;
     startY = touchObj.pageY;
@@ -340,16 +365,10 @@ const swipeDetected = (el) => {
   })
 } 
 
-
-
 const init = () => {
   swipeDetected(swipeElement);
 
   menu.addEventListener('click', menuScrollHandler)
-  
-  items.forEach((elem) => {
-    elem.addEventListener('click', screenActiveHandler)
-  })
 
   previous.addEventListener('click', function(event) {
     if (isEnabled) previousItem(currentItem)

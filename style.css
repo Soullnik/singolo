@@ -217,16 +217,35 @@ html {
     background-image: url(assets/swipe_arrow-next.svg);
 }
 
+/* СДАЙЛ ДОТС */
 
-/* Phone*/
-
-.iphone_second--slide-left,
-.iphone_second--slide-center,
-.iphone_second--slide-right {
+.slider_dots {
+    width: 100%;
+    height: auto;
     position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    text-align: center;
+}
+  
+.slider_dots--item {
+    width: 10px;
+    height: 10px;
+    margin: 5px 7px;
+    padding: 0;
+    display: inline-block;
+    background-color: #f0d8d9BB;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slider_dots--item-curent {
+    background-color: #2d303a;
 }
 
 
+/* Phone*/
 
 .iphone {
     position: relative;
@@ -241,11 +260,8 @@ html {
     box-shadow: 2vw 2vw 0px 0.4vw rgba(0, 0, 0, 0.15);
 }
 
-.iphone_second  {
-    position: absolute;
-}
-
 .iphone_second--left {
+    position: absolute;
     max-width: 140px;
     opacity: 0.5;
     max-height: 298px;
@@ -256,6 +272,7 @@ html {
 }
 
 .iphone_second--center {
+    position: absolute;
     max-width: 229.61px;
     max-height: 486.3px;
     width: 23vw;
@@ -266,6 +283,7 @@ html {
 }
 
 .iphone_second--right {
+    position: absolute;
     max-width: 140px;
     opacity: 0.5;
     max-height: 298px;
@@ -960,6 +978,10 @@ a.anchor {
         z-index: 3;
     }
 
+    .slider_container--arrow {
+        display: none;
+    }
+
     .img_block {
         flex: 1 0 35%;
     }
@@ -1122,79 +1144,3 @@ a.anchor {
         height: 380px;
     }
 }
-
-
-
-/*
-
-
-.header_container {
-    display: block;
-    height: 370px;
-    background-color: #2d303a;
-    border-bottom: 6px solid #323746;
-    justify-content: space-between;
-    overflow: hidden;
-    /* animation: 1s; */
-/* }
-
-@media (max-width: 480px)
-.header_container--open {
-    display: block;
-    height: 370px;
-    justify-content: none;
-    animation: 0.5s ease-in-out;
-    overflow: hidden;
-}
-
-@media (max-width: 480px)
-
-
-.burger {
-    display: none;
-}
-
-@media (max-width: 480px)
-.header_container--logo-open {
-    margin: auto;
-    display: inline;
-}
-
-.header_container--logo {
-    font-family: "Lato Bold";
-    font-size: 25.5px;
-    color: #ffffff;
-    margin-top: 32px;
-    text-transform: uppercase;
-    letter-spacing: -0.8px;
-}
-
-.header_container--navigation {
-    display: block;
-    width: 100%;
-    max-width: 371px;
-}
-
-@media (max-width: 480px)
-.header_container--navigation {
-    /* display: none; */
-    /* text-align: center;
-}
-
-display: flex; */
-    /* font-size: 12px;
-    align-content: center;
-    align-items: center;
-    line-height: 13px;
-}
-
-.header_container--item {
-    /* display: flex; */
-    /* margin-top: 42px;
-    text-align: center;
-} */ 
-
-/* убрать афтер */
-
-
-
