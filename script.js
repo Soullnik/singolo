@@ -84,7 +84,7 @@ const screenActiveHandler = (event) => {
     } else if (second) {
     (changeClass.contains('iphone--screen_second')) ? changeClass.remove('iphone--screen_second') : changeClass.add('iphone--screen_second');
     } else if (third) {
-    (changeClass.contains('iphone--screen_first')) ? changeClass.remove('iphone--screen_first') : changeClass.add('iphone--screen_first');
+    (changeClass.contains('iphone--screen_third')) ? changeClass.remove('iphone--screen_third') : changeClass.add('iphone--screen_third');
     }
   }
 } 

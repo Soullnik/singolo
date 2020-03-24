@@ -283,7 +283,7 @@ html {
     margin: 10% 0px 0px 5.4%;
     background-color: black;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 }
 
@@ -340,6 +340,10 @@ html {
 
 .iphone--screen_second {
     background-image: url(assets/phone-horizontal-display.svg);
+}
+
+.iphone--screen_third {
+    background-image: url(assets/phone-vertical-display.svg);
 }
 
 /*services*/
