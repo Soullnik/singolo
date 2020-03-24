@@ -1006,7 +1006,7 @@ a.anchor {
 
     .header_container--logo {
         margin-top: 14px;
-        display: inline;
+        display: inline-block;
         text-align: center;
     
     }
