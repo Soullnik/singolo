@@ -489,20 +489,19 @@ html {
 .layout_four_column {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10px;
     margin-bottom: 40px;
   }
 
 .img_block {
-    margin: 10px 20px 10px 0px;
+    margin: 6px 20px 10px 0px;
     flex: 1 0 20%;
 }
 
 
-.img_block::before{
+.img_block::before {
     content: "";
     float: left;
-    padding-top: 100%;
+    padding-top: 87%;
 }
 
 .img_block:nth-child(n+13){

@@ -61,8 +61,8 @@ function nextItem(n) {
 
 const menuScrollHandler = (event) => {
   if(event.target.tagName === 'A') {
-    event.preventDefault();
     closeBurger();
+    event.preventDefault();
     const blockID = event.target.getAttribute('href').substr(1);
     document.getElementById(blockID).scrollIntoView({
       behavior: 'smooth',
@@ -212,12 +212,12 @@ function btnHeandler(event) {
 }
 
 const closeBurger = () => {
-  event.target.classList.add('to_close_burger')
+  burgerBtn.classList.add('to_close_burger')
   headerBox.classList.add('to_close')
   
-  event.target.addEventListener('animationend', function() {
-    event.target.classList.remove('to_close_burger')
-    event.target.classList.remove('burger-open')
+  burgerBtn.addEventListener('animationend', function() {
+    burgerBtn.classList.remove('to_close_burger')
+    burgerBtn.classList.remove('burger-open')
   })
 
   headerBox.addEventListener('animationend', function() {
@@ -230,12 +230,12 @@ const closeBurger = () => {
 }
 
 const openBurger = () => {
-  event.target.classList.add('to_open_burger')
+  burgerBtn.classList.add('to_open_burger')
   headerBox.classList.add('to_open')
 
-  event.target.addEventListener('animationend', function() {
-    event.target.classList.add('burger-open')
-    event.target.classList.remove('to_open_burger')
+  burgerBtn.addEventListener('animationend', function() {
+    burgerBtn.classList.add('burger-open')
+    burgerBtn.classList.remove('to_open_burger')
   })
 
   headerBox.addEventListener('animationend', function() {
