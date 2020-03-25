@@ -399,7 +399,7 @@ p {
 .layout_three_column--services {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 34px;
     margin-top: 40px;
 }
