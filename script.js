@@ -284,6 +284,12 @@ const swipeDetected = (el) => {
   let restraint = 100;
   let allowedTime = 300;
 
+  surface.addEventListener('click', function(e) {
+    if (e.target.classList.contains('iphone--button')) {
+      screenActiveHandler(e)
+    }
+  })
+
   surface.addEventListener('mousedown', function(e) {
     startX = e.pageX;
     startY = e.pageY;
