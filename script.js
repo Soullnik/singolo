@@ -10,16 +10,11 @@ const formEmail = document.querySelector('.layout_two_column--form_email');
 const formSubject = document.querySelector('.layout_two_column--form_subject');
 const formDescription = document.querySelector('.layout_two_column--form_description');
 const contuct_us = document.querySelector('.contact_us');
-const overlay = createDomNode('overlay', 'div', 'overlay');
-const modal = createDomNode('modal', 'div', 'modal');
-const message = createDomNode('message', 'div', 'message');
-const messageStatus = createDomNode('messageStatus', 'p', 'message--status');
-const messageSubject = createDomNode('messageSubject', 'p', 'message--subject');
-const messageDescription = createDomNode('messageDescription', 'p', 'message--description');
-const messageBtn = createDomNode('messageBtn', 'button', 'message--agree-hidden');
 const burgerBtn = document.querySelector('.burger');
 const headerBox = document.querySelector('.header_container');
 const swipeElement = document.querySelector('.slider_container');
+const overlay = createDomNode('overlay', 'div', 'overlay');
+const modal = createDomNode('modal', 'div', 'modal');
 
 let currentItem = 0;
 let isEnabled = true;
@@ -135,7 +130,7 @@ function scrollWindowHeandler() {
   const contactPosition = document.getElementById('yakContactContainer').offsetTop - header
 
   const currentPosition = window.pageYOffset
-    if (window.pageYOffset === 0) {
+    if (window.pageYOffset <= 100) {
       changeActiveNav(0);
     }else if (currentPosition >= servicesPosition && currentPosition < portfolioPosition) {
       changeActiveNav(1);
@@ -159,70 +154,75 @@ function changeActiveNav(i) {
   navLinks[i].classList.add('header_container--link-active')
 }
 
+function btnSubmitHeandler(event) {
+  let validateName = formName.validity.valid;
+  let validateEmail = formEmail.validity.valid;
+
+  if(validateName == true && validateEmail == true) {
+    event.preventDefault();
+    let modalChild = []
+    modalChild.push(createDomNode('messageStatus', 'p', 'message--status'));
+    modalChild.push(createDomNode('messageSubject', 'p', 'message--subject'));
+    modalChild.push(createDomNode('messageDescription', 'p', 'message--description'));
+    modalChild.push(createDomNode('messageBtn', 'button', 'message--agree-hidden'));
+    setContent(formSubject.value,formDescription.value,'Письмо отправлено','Продолжить', modalChild)
+    document.body.classList.add('scroll-hidden');
+    appendModalElements(modalChild);
+    document.querySelector('.message--agree-hidden').addEventListener('click', function(event) {
+      overlay.innerHTML = '';
+      modal.innerHTML = '';
+      document.body.classList.remove('scroll-hidden');
+      overlay.remove();
+      form.reset();
+    }) 
+  }
+}
+
+let setContent = (formSubject,formDescription, contentStatus, contentButton, modalChild) =>{
+  modalChild.forEach(element => {
+    console.log(element.className)
+    switch (element.className) {
+      case 'message--subject':
+          if(formSubject !== '') {
+            element.innerText = 'Тема: ' + formSubject;
+          }else {
+            element.innerText = 'Без темы';
+          };
+        break;
+      case 'message--description':
+          if(formDescription !== '') {
+            element.innerText = 'Описание: ' + formDescription;
+          }else {
+            element.innerText = 'Без описания';
+          };
+        break;
+      case 'message--status':
+          element.innerText += contentStatus;
+      break; 
+      case 'message--agree-hidden':
+          element.innerText += contentButton;
+        break;
+    }
+  })
+}
+
+
+let appendModalElements = (modalChild) => {
+  document.body.prepend(overlay);
+  overlay.append(modal);
+  console.log(modalChild)
+  modalChild.forEach(elem => {
+    modal.append(elem)
+  }) 
+  
+}
+
 function createDomNode(node, element, ...classes) {
   node = document.createElement(element);
   node.classList.add(...classes);
   return node;
 }
 
-function setContent(content, element) {
-  if (element == messageSubject) {
-    if(content !== '') {
-      element.innerText = 'Тема: ' + content;
-    }else {
-      element.innerText = 'Без темы';
-    };
-  }
-
-  if (element == messageDescription) {
-    if(content !== '') {
-      element.innerText = 'Описание: ' + content;
-    }else {
-      element.innerText = 'Без описания';
-    };
-  }
-
-  if(element == messageStatus) {
-    element.innerText += content;
-  }else if(element == messageBtn) {
-    element.innerText += content;
-  }
-}
-
-function appendModalElements() {
-  yakContact.append(modal);
-  modal.append(message);
-  message.append(messageStatus);
-  message.append(messageSubject);
-  message.append(messageDescription);
-  message.append(messageBtn);
-  setContent('Письмо отправлено', messageStatus)
-  setContent('Продолжить', messageBtn)
-}
-
-function btnHeandler(event) {
-  let validateName = formName.validity.valid;
-  let validateEmail = formEmail.validity.valid;
-
-  if(validateName == true && validateEmail == true) {
-    modalChild = [modal, message, messageStatus, messageSubject, messageDescription, messageBtn]
-    setContent(formSubject.value, messageSubject)
-    setContent(formDescription.value, messageDescription)
-    event.preventDefault();
-    document.body.prepend(overlay);
-    document.body.classList.add('scroll-hidden');
-    appendModalElements();
-    document.querySelector('.message--agree-hidden').addEventListener('click', function(event) {
-      modalChild.forEach(item => {
-        item.innerText = '';
-      })
-      overlay.remove();
-      document.body.classList.remove('scroll-hidden');
-      modal.remove();
-      form.reset();
-    })
-  }
-}
 
 const closeBurger = () => {
   burgerBtn.classList.add('to_close_burger')
@@ -384,7 +384,7 @@ const init = () => {
 
   window.addEventListener('scroll', scrollWindowHeandler)
 
-  SubmitBtn.addEventListener('click', btnHeandler)
+  SubmitBtn.addEventListener('click', btnSubmitHeandler)
 
   burgerBtn.addEventListener('click', burgerHeandler)
 }
