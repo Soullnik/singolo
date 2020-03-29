@@ -177,7 +177,7 @@ function btnSubmitHeandler(event) {
   }
 }
 
-function setContent(ormSubject,formDescription, contentStatus, contentButton, modalChild) {
+function setContent(formSubject,formDescription, contentStatus, contentButton, modalChild) {
   modalChild.forEach(element => {
     console.log(element.className)
     switch (element.className) {

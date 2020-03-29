@@ -218,7 +218,6 @@ p {
     display: inline-block;
     background-color: #f0d8d9BB;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 .slider_dots--item-curent {
