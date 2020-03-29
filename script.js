@@ -2,7 +2,7 @@ const items = document.querySelectorAll('.item');
 const dots = document.querySelectorAll('.slider_dots--item');
 const next = document.querySelector('.slider_container--arrow-next');
 const previous = document.querySelector('.slider_container--arrow-previous');
-const portfolioImg = document.querySelectorAll('.img');
+const portfolioImgBlock = document.querySelector('#imgBlock');
 const SubmitBtn = document.querySelector('.submit');
 const form = document.querySelector('.layout_two_column--form');
 const formName = document.querySelector('.layout_two_column--form_name');
@@ -11,7 +11,8 @@ const formSubject = document.querySelector('.layout_two_column--form_subject');
 const formDescription = document.querySelector('.layout_two_column--form_description');
 const contuct_us = document.querySelector('.contact_us');
 const burgerBtn = document.querySelector('.burger');
-const headerBox = document.querySelector('.header_container');
+const burgerNav = document.querySelector('.header_container--navigation');
+const logo = document.querySelector('.header_container--logo');
 const swipeElement = document.querySelector('.slider_container');
 const overlay = createDomNode('overlay', 'div', 'overlay');
 const modal = createDomNode('modal', 'div', 'modal');
@@ -64,7 +65,7 @@ function nextItem(n) {
   showItem('from_right');
 }
 
-const menuScrollHandler = (event) => {
+function menuScrollHandler(event) {
   if(event.target.tagName === 'A') {
     closeBurger();
     event.preventDefault();
@@ -76,7 +77,7 @@ const menuScrollHandler = (event) => {
   }
 }
 
-const screenActiveHandler = (event) => {
+function screenActiveHandler(event) {
   const phoneScreen = event.target.parentElement.querySelector('.iphone--screen');
   const first = event.target.parentElement.classList.contains('slider_container--iphone-first');
   const backgroundPhoneLeft = event.target.parentElement.classList.contains('iphone_second--left');
@@ -95,25 +96,23 @@ const screenActiveHandler = (event) => {
 
 function tabActiveHandler(event) {
   if (!event.target.classList.contains('portfolio_container--tag-selected')) {
-    let arrImg = []
-    portfolioImg.forEach(el => arrImg.push(el.src))
+    let arrImg =  [...document.querySelectorAll('.img_block')];
+
     if (event.target.tagName === 'SPAN') {
       tab.querySelectorAll('.portfolio_container--tag').forEach(el => el.classList.remove('portfolio_container--tag-selected'))
-      event.target.classList.add('portfolio_container--tag-selected')
+      event.target.classList.add('portfolio_container--tag-selected');
       if (event.target.classList.contains('portfolio_container--tag-selected')) {
         arrImg.sort(function() {
           return Math.random() - 0.5
         })
-        arrImg.forEach(function(elem, index) {
-        portfolioImg[index].src = elem;
-        })
-        portfolioImg.forEach(el => el.classList.remove('img_active'))
+        arrImg.forEach(el => portfolioImgBlock.appendChild(el))
       }
     }
   }
 }
 
 function highlightImgHeandler(event) {
+  let portfolioImg = document.querySelectorAll('.img');
   if(event.target.classList.contains('img') && event.target.classList.contains('img_active') === false) {
     portfolioImg.forEach(el => el.classList.remove('img_active'))
     event.target.classList.add('img_active')
@@ -165,7 +164,7 @@ function btnSubmitHeandler(event) {
     modalChild.push(createDomNode('messageSubject', 'p', 'message--subject'));
     modalChild.push(createDomNode('messageDescription', 'p', 'message--description'));
     modalChild.push(createDomNode('messageBtn', 'button', 'message--agree-hidden'));
-    setContent(formSubject.value,formDescription.value,'Письмо отправлено','Продолжить', modalChild)
+    setContent(formSubject.value,formDescription.value,'Письмо отправлено','ОК', modalChild)
     document.body.classList.add('scroll-hidden');
     appendModalElements(modalChild);
     document.querySelector('.message--agree-hidden').addEventListener('click', function(event) {
@@ -178,7 +177,7 @@ function btnSubmitHeandler(event) {
   }
 }
 
-let setContent = (formSubject,formDescription, contentStatus, contentButton, modalChild) =>{
+function setContent(ormSubject,formDescription, contentStatus, contentButton, modalChild) {
   modalChild.forEach(element => {
     console.log(element.className)
     switch (element.className) {
@@ -206,8 +205,7 @@ let setContent = (formSubject,formDescription, contentStatus, contentButton, mod
   })
 }
 
-
-let appendModalElements = (modalChild) => {
+function appendModalElements(modalChild) {
   document.body.prepend(overlay);
   overlay.append(modal);
   console.log(modalChild)
@@ -223,37 +221,38 @@ function createDomNode(node, element, ...classes) {
   return node;
 }
 
-
-const closeBurger = () => {
-  burgerBtn.classList.add('to_close_burger')
-  headerBox.classList.add('to_close')
-  
+function closeBurger() {
+  burgerBtn.classList.add('to_close_burger');
+  logo.classList.add('to_right_logo');
+ 
   burgerBtn.addEventListener('animationend', function() {
     burgerBtn.classList.remove('to_close_burger')
     burgerBtn.classList.remove('burger-open')
   })
 
-  headerBox.addEventListener('animationend', function() {
-    headerBox.classList.remove('to_close')
-    headerBox.classList.remove('header_container--open')
+  logo.addEventListener('animationend', function() {
+    logo.classList.remove('header_container--logo-open');
+    logo.classList.remove('to_right_logo');
   })
+  burgerNav.classList.remove('header_container--navigation-open');
   overlay.remove();
   document.body.classList.remove('scroll-hidden');
   isEnabledBurger = true;
 }
 
-const openBurger = () => {
-  burgerBtn.classList.add('to_open_burger')
-  headerBox.classList.add('to_open')
+function openBurger() {
+  burgerBtn.classList.add('to_open_burger');
+  burgerNav.classList.add('header_container--navigation-open');
+  logo.classList.add('to_left_logo');
 
   burgerBtn.addEventListener('animationend', function() {
-    burgerBtn.classList.add('burger-open')
-    burgerBtn.classList.remove('to_open_burger')
+    burgerBtn.classList.add('burger-open');
+    burgerBtn.classList.remove('to_open_burger');
   })
 
-  headerBox.addEventListener('animationend', function() {
-    headerBox.classList.add('header_container--open')
-    headerBox.classList.remove('to_open')
+  logo.addEventListener('animationend', function() {
+    logo.classList.add('header_container--logo-open');
+    logo.classList.remove('to_left_logo');
   })
   
   document.body.prepend(overlay);
@@ -270,7 +269,7 @@ function burgerHeandler(event) {
   }
 }
 
-const swipeDetected = (el) => {
+function swipeDetected(el) {
   let surface = el;
   let startX = 0;
   let startY = 0;
